@@ -30,7 +30,12 @@ const buildFormData = data => {
 };
 
 export function getToken(state, uri, redirectUrl, onAuth, onError) {
-  let qp = uri;
+  let qp = new URL(uri);
+  if (/code|token|error/.test(qp.hash)) {
+    qp = qp.hash.substring(1);
+  } else {
+    qp = qp.search.substring(1);
+  }
   qp = parseQueryString(qp);
 
   const isValid = qp.state === state;
@@ -42,6 +47,8 @@ export function getToken(state, uri, redirectUrl, onAuth, onError) {
     const form = {
       redirect_uri: redirectUrl,
       code: qp.code,
+      grant_type: "authorization_code",
+      client_id: auth_config.client_id,
     };
     const options = {
       method: 'POST',
@@ -72,7 +79,7 @@ function getTokenRequest(tokenUrl, options, onAuth, onError) {
     .then(resp => {
       setSession(resp.access_token);
       setLogined(true);
-      setUser(resp.name);
+      setUser(resp.username);
       onAuth(resp);
     })
     .catch(err => {
