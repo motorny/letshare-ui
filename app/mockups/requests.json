@@ -1,7 +1,5 @@
 {
-  "count": 2,
-  "page": 1,
-  "requests": [
+  "requests_input": [
     {
       "item": {
         "name": "Кабель",
@@ -33,6 +31,50 @@
         "name": "Кабель",
         "img_url": "http://ankom.ru/wp-content/uploads/Kabel-HDMI-HDMI-5m..jpg",
         "description": "Охуенный"
+      },
+      "user": {
+        "name": "Илья",
+        "location": "ThirdRoom"
+      },
+      "creation_time": 1570903531,
+      "response": 1
+    }
+  ],
+  "requests_output": [
+    {
+      "item": {
+        "name": "Девелопер",
+        "img_url":
+          "https://sun9-68.userapi.com/c852228/v852228143/fe702/1MYpNC60vEo.jpg",
+        "description": "ЛУЧШИИИИИЙ"
+      },
+      "user": {
+        "name": "Илья",
+        "location": "ThirdRoom"
+      },
+      "creation_time": 1570903531,
+      "response": 0
+    },
+    {
+      "item": {
+        "name": "Девелопер",
+        "img_url":
+          "https://sun9-68.userapi.com/c852228/v852228143/fe702/1MYpNC60vEo.jpg",
+        "description": "ЛУЧШИИИИИЙ"
+      },
+      "user": {
+        "name": "Илья",
+        "location": "ThirdRoom"
+      },
+      "creation_time": 1570903531,
+      "response": 0
+    },
+    {
+      "item": {
+        "name": "Девелопер",
+        "img_url":
+          "https://sun9-68.userapi.com/c852228/v852228143/fe702/1MYpNC60vEo.jpg",
+        "description": "ЛУЧШИИИИИЙ"
       },
       "user": {
         "name": "Илья",

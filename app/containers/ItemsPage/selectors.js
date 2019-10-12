@@ -5,7 +5,7 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
-const selectFeed = state => state.get('mainId', initialState);
+const selectFeed = state => state.get('itemsId', initialState);
 
 const makeSelectLoading = () =>
   createSelector(selectFeed, mainState => mainState.get('loading'));

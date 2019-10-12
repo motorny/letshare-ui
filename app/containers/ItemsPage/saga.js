@@ -1,8 +1,10 @@
 import { put, takeLatest } from 'redux-saga/effects';
-import { LOAD_MAIN, getMainQuery } from './constants';
+import { LOAD_MAIN } from './constants';
 import { mainLoaded, mainLoadingError } from './actions';
 
 import { requestDataUrl } from '../../utils/constants';
+
+import items_info from '../../mockups/items.json';
 
 function fetchUrl(url, body) {
   // url is only the last part of the full path
@@ -23,11 +25,12 @@ function fetchUrl(url, body) {
  * Feed data load handler
  */
 export function* loadContent() {
-  const { res, err } = yield fetchUrl(requestDataUrl, getMainQuery);
-  if (err) {
-    yield put(mainLoadingError(err));
-  } else if (res.data) yield put(mainLoaded(res.data));
-  else yield put(mainLoaded(false));
+  // const { res, err } = yield fetchUrl(requestDataUrl, getMainQuery);
+  // if (err) {
+  //   yield put(mainLoadingError(err));
+  // } else if (res.data) yield put(mainLoaded(res.data));
+  // else yield put(mainLoaded(false));
+  yield put(mainLoaded(items_info));
 }
 
 /**

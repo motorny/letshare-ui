@@ -44,6 +44,13 @@ class RequestsList extends React.Component {
 
     render() {
         const locale = getLocale();
+        let requests_list;
+        if (this.state.isInput) {
+            requests_list = this.props.requests_info.requests_input
+        }
+        else {
+            requests_list = this.props.requests_info.requests_output
+        }
         return (
             <Container>
                 <p className="requests-list__title">
@@ -55,8 +62,8 @@ class RequestsList extends React.Component {
                 <RequestType isActive={!this.state.isInput} className="requests-list__request_type" onClick={this.showOutput}>
                     Исходящие
                 </RequestType>
-                {this.props.requests_info.requests.map(el => (
-                    <div>
+                {requests_list.map((el, index) => (
+                    <div key={index}>
                         <hr/>
                         <Request name={el.item.name} img_url={el.item.img_url} descriptiion={el.item.description}
                                  requester={el.user.name} location={el.user.location} response={el.response}

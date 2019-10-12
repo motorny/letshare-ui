@@ -23,7 +23,6 @@ import reducer from './reducer';
 import saga from './saga';
 
 import pages from '../../mockups/pages.json';
-import requests_info from '../../mockups/requests.json'
 
 const HeaderDiv = styled.div`
     height: 120px;
@@ -42,26 +41,32 @@ export class RequestsPage extends React.Component {
     render() {
         const {loading, error, data} = this.props;
         const locale = getLocale();
+
+        let content;
         if (error) {
             console.log(error);
-            return (
-                <TechProblem/>
-            )
+            content = <TechProblem/>
         }
-        if (data) {
-            return (
+        else if (data) {
+            content =
                 <div>
-                    <Helmet>
-                        <title>{pages.requests_page[locale]}</title>
-                        <meta name="description" content="ProductPage"/>
-                    </Helmet>
                     <HeaderDiv/>
-                    <RequestsList requests_info={requests_info}/>
+                    <RequestsList requests_info={data}/>
                 </div>
-            );
-        } else {
-            return <LoadingIndicator/>
         }
+        else {
+            content = <LoadingIndicator/>
+        }
+
+        return (
+            <div>
+                <Helmet>
+                    <title>{pages.items_page[locale]}</title>
+                    <meta name="description" content="ProductPage"/>
+                </Helmet>
+                {content}
+            </div>
+        );
     }
 }
 
@@ -89,8 +94,8 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-const withReducer = injectReducer({ key: 'mainId', reducer });
-const withSaga = injectSaga({ key: 'mainId', saga });
+const withReducer = injectReducer({ key: 'requestsId', reducer });
+const withSaga = injectSaga({ key: 'requestsId', saga });
 
 export default compose(
   withReducer,
