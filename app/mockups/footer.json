@@ -1,0 +1,38 @@
+{
+  "logoSrc": "/logo.svg",
+  "slogan": "Software and Infrastructure Development",
+  "rights": "© 2019 ITS. All Rights Reserved.",
+  "text_title_menu": {
+    "RU": "Карта сайта",
+    "EN": "Site map"
+  },
+
+  "text_title_contacts": {
+    "RU": "Контакты",
+    "EN": "Contacts"
+  },
+
+  "text_title_follow": {
+    "RU": "Соц. сети",
+    "EN": "Follow"
+  },
+
+  "text_title_legal": {
+    "RU": "Права",
+    "EN": "Legal"
+  },
+
+  "follow_vk": {
+    "RU": "ВК",
+    "EN": "VK"
+  },
+  "follow_instagram": {
+    "RU": "Инстаграм",
+    "EN": "Instagram"
+  },
+
+  "policy": {
+    "RU": "Политика компании",
+    "EN": "Privacy policy"
+  }
+}

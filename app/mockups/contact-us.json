@@ -1,0 +1,72 @@
+{
+  "col_title_left": {
+    "strong": {
+      "RU": "Наши",
+      "EN": "Our"
+    },
+    "common": {
+      "RU": " контакты",
+      "EN": " contacts"
+    }
+  },
+  "col_title_right": {
+    "RU": "Хотите получить консультацию, реализовать проект или задать вопрос?",
+    "EN": "Send us"
+  },
+  "input_title": {
+    "RU": "Просто напишите нам сообщение",
+    "EN": "Send us a message"
+  },
+  "label_name": {
+    "RU": "ФИО:",
+    "EN": "Name:"
+  },
+  "label_email": {
+    "RU": "E-mail:",
+    "EN": "E-mail:"
+  },
+  "label_message": {
+    "RU": "Напишите ваш вопрос:",
+    "EN": "Write your question:"
+  },
+
+  "contacts_address": {
+    "title": {
+      "RU": "АДРЕС",
+      "EN": "ADDRESS"
+    }
+  },
+  "contacts_mail": {
+    "title": {
+      "RU": "ПОЧТА",
+      "EN": "E-MAIL"
+    }
+  },
+  "contacts_tel": {
+    "title": {
+      "RU": "ТЕЛЕФОН",
+      "EN": "TELEPHONE"
+    }
+  },
+  "contacts_work_hours": {
+    "title": {
+      "RU": "ЧАСЫ РАБОТЫ",
+      "EN": "WORK HOURS"
+    }
+  },
+  "contacts_add_info": {
+    "title": {
+      "RU": "ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ",
+      "EN": "ADDITIONAL INFORMATION"
+    },
+    "info": {
+      "RU": "Пишите нам в любое время! Среднее время ответа не более 12 часов.",
+      "EN": "Text us any time! Average response time less than 2 business days."
+    }
+  },
+
+  "button": {
+    "RU": "ОТПРАВИТЬ",
+    "EN": "SEND MESSAGE"
+  }
+}

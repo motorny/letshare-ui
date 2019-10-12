@@ -1,0 +1,70 @@
+@import "../../global-styles/global-params";
+
+.home-numbers__top {
+  text-align: center;
+  width: 50%;
+  margin: 4rem auto 1rem auto;
+  @media screen and (max-width: 767px) {
+    margin-top: 3rem;
+    width: 80%;
+  }
+}
+
+.home-numbers__title {
+  @include font-size__title;
+}
+
+.home-numbers__description {
+  @include font-size__text;
+}
+
+
+.home-numbers__number {
+  text-align: center;
+}
+
+.home-numbers__number_col {
+  padding: 85px 15px 85px 15px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 3.5rem;
+    padding: 0;
+  }
+}
+.home-numbers__number_col_0 {
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  @media screen and (max-width: 767px) {
+    border: none;
+  }
+}
+.home-numbers__number_col_1 {
+  border-bottom: 1px solid #ebebeb;
+  @media screen and (max-width: 767px) {
+    border: 0;
+  }
+}
+.home-numbers__number_col_2 {
+  border-right: 1px solid #ebebeb;
+  @media screen and (max-width: 767px) {
+    border: 0;
+  }
+}
+
+.home-numbers__number_title {
+  font-weight: 300;
+  font-family: $font-family_common;
+  font-size: 72px;
+  @media screen and (max-width: 1000px) {
+    font-size: 30px;
+  }
+}
+
+
+
+.home-numbers__number_text {
+  font-family: $font-family_common;
+  font-size: 24px;
+  @media screen and (max-width: 300px) {
+    font-size: 16px;
+  }
+}

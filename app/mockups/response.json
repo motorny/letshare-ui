@@ -1,0 +1,22 @@
+{
+  "title_ok": {
+    "str_1": {
+      "RU": "Ваше сообщение успешно отправлено!",
+      "EN": "Your message has been sent!"
+    },
+    "str_2": {
+      "RU": "Мы скоро Вам ответим.",
+      "EN": "We will answer soon."
+    }
+  },
+  "title_err": {
+    "str_1": {
+      "RU": "Во время отправки произошла ошибка.",
+      "EN": "Error while sending message."
+    },
+    "str_2": {
+      "RU": "Позвоните нам, пока мы все чиним.",
+      "EN": "Please call us."
+    }
+  }
+}

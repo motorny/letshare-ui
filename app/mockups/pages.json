@@ -1,0 +1,39 @@
+{
+  "navs": [
+    {
+      "linkName": {
+        "RU": "Главная",
+        "EN": "Home"
+      },
+      "link": "#top"
+    },
+    {
+      "linkName": {
+        "RU": "Решения",
+        "EN": "What we do"
+      },
+      "link": "#solutions"
+    },
+    {
+      "linkName": {
+        "RU": "Экспертиза",
+        "EN": "About us"
+      },
+      "link": "#expertise"
+    },
+    {
+      "linkName": {
+        "RU": "IT Сообщество",
+        "EN": "Career"
+      },
+      "link": "#community"
+    },
+    {
+      "linkName": {
+        "RU": "Контакты",
+        "EN": "Contacts"
+      },
+      "link": "#contacts"
+    }
+  ]
+}

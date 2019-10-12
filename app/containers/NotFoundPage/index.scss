@@ -1,0 +1,14 @@
+@import "../../global-styles/global-params";
+.not-found {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.not-found__link {
+  color: $corporate-color;
+}
+.not-found__link:hover {
+  text-decoration: none;
+}

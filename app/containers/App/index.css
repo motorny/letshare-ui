@@ -1,0 +1,9 @@
+.app__theme {
+  margin: 0 auto;
+  display: flex;
+  min-width: 250px;
+  min-height: 100%;
+  flex-direction: column;
+  background-color: #ffffff;
+  color: #3f3f3f;
+}

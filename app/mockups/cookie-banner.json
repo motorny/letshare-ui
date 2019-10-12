@@ -1,0 +1,19 @@
+{
+  "using": {
+    "RU":
+      "ITS использует cookie для персонализации сервисов и вашего удобства. Продолжая использовать сайт, вы соглашаетесь с ",
+    "EN": "We use cookies. By continuing to use the site, you agree to "
+  },
+  "using_2": {
+    "RU": " компании.",
+    "EN": " of the company."
+  },
+  "privacy": {
+    "RU": "политикой конфиденциальности",
+    "EN": "Privacy Policy"
+  },
+  "agree": {
+    "RU": "Принять",
+    "EN": "Agree"
+  }
+}

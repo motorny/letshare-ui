@@ -1,0 +1,75 @@
+@import "../../global-styles/global-params";
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin pack($side) {
+  -webkit-box-pack: $side;
+  -ms-flex-pack: $side;
+}
+
+@mixin justify($side) {
+  -webkit-justify-content: $side;
+  justify-content: $side;
+}
+
+@mixin align($side) {
+  -webkit-box-align: $side;
+  -ms-flex-align: $side;
+}
+
+.home-partners {
+  margin: 10vw auto 5vw auto;
+}
+
+.home-partners__swiper_wrap {
+  margin-top: 15px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 80px);
+}
+
+
+.home-partners__swiper-slide {
+  @include display-flex;
+  @include pack(center);
+  @include justify(center);
+  @include align(center);
+
+  text-align: center;
+  width: 25%;
+  @media screen and (max-width: 800px) {
+      width: 50%;
+  }
+  @media screen and (max-width: 550px) {
+      width: 100%;
+  }
+}
+
+.home-partners__title_font {
+  padding: 0 10px;
+  @include font-size__title;
+  text-align: center;
+}
+
+.home-partners__partner_img {
+  display: block;
+  width: 100%;
+}
+
+.home-partners .swiper-container {
+  position: unset;
+}
+
+$margin: -35px;
+.home-partners .swiper-button-prev {
+  left: $margin !important;}
+
+.home-partners .swiper-button-next {
+  right: $margin !important;
+}

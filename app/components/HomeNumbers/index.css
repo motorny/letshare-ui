@@ -1,0 +1,111 @@
+.home-numbers__top {
+  text-align: center;
+  width: 50%;
+  margin: 4rem auto 1rem auto;
+}
+@media screen and (max-width: 767px) {
+  .home-numbers__top {
+    margin-top: 3rem;
+    width: 80%;
+  }
+}
+
+.home-numbers__title {
+  font-family: "Montserrat", Proxima Nova, sans-serif;
+  font-size: 35px;
+  font-weight: 900;
+  transition: 0.5s ease;
+}
+@media screen and (max-width: 768px) {
+  .home-numbers__title {
+    font-size: 27px;
+    transition: 0.5s ease;
+  }
+}
+@media screen and (max-width: 320px) {
+  .home-numbers__title {
+    font-size: 24px;
+    transition: 0.5s ease;
+  }
+}
+
+.home-numbers__description {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 18px;
+  transition: 0.5s ease;
+}
+@media screen and (max-width: 1000px) {
+  .home-numbers__description {
+    font-size: 17px;
+    transition: 0.5s ease;
+  }
+}
+@media screen and (max-width: 767px) {
+  .home-numbers__description {
+    font-size: 15px;
+    transition: 0.5s ease;
+  }
+}
+
+.home-numbers__number {
+  text-align: center;
+}
+
+.home-numbers__number_col {
+  padding: 85px 15px 85px 15px;
+}
+@media screen and (max-width: 767px) {
+  .home-numbers__number_col {
+    margin-bottom: 3.5rem;
+    padding: 0;
+  }
+}
+
+.home-numbers__number_col_0 {
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+@media screen and (max-width: 767px) {
+  .home-numbers__number_col_0 {
+    border: none;
+  }
+}
+
+.home-numbers__number_col_1 {
+  border-bottom: 1px solid #ebebeb;
+}
+@media screen and (max-width: 767px) {
+  .home-numbers__number_col_1 {
+    border: 0;
+  }
+}
+
+.home-numbers__number_col_2 {
+  border-right: 1px solid #ebebeb;
+}
+@media screen and (max-width: 767px) {
+  .home-numbers__number_col_2 {
+    border: 0;
+  }
+}
+
+.home-numbers__number_title {
+  font-weight: 300;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 72px;
+}
+@media screen and (max-width: 1000px) {
+  .home-numbers__number_title {
+    font-size: 30px;
+  }
+}
+
+.home-numbers__number_text {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 24px;
+}
+@media screen and (max-width: 300px) {
+  .home-numbers__number_text {
+    font-size: 16px;
+  }
+}

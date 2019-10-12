@@ -1,0 +1,10 @@
+@import "../../global-styles/global-params";
+.app__theme {
+  margin: 0 auto;
+  display: flex;
+  min-width: 250px;
+  min-height: 100%;
+  flex-direction: column;
+  background-color: $backgroundColor;
+  color: $textColor;
+}

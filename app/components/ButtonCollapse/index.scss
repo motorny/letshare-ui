@@ -1,0 +1,41 @@
+@import "../../global-styles/global-params";
+
+.button-collapse__button {
+  display: flex;
+  padding: 20px;
+  margin-bottom: 1px;
+  width: 100%;
+  cursor: pointer;
+}
+.button-collapse__button:focus {
+  outline: none;
+}
+.button-collapse__button_open {
+  color: #ffffff;
+  background-color: $corporate-color;
+}
+.button-collapse__button_close {
+  background-color: $additionalColor;
+}
+
+.button-collapse__ellipsis {
+  margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 14px;
+  width: 14px;
+}
+
+.button-collapse__collapse {
+  margin: 0 15px 0 25px;
+}
+
+.button-collapse__text {
+  font-family: $font-family_common;
+  font-size: 15px;
+  font-weight: 200;
+  transition: $transition;
+  @media screen and (max-width: 1000px) {
+    font-size: 13px;
+  }
+}

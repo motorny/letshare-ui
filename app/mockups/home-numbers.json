@@ -1,0 +1,41 @@
+{
+  "title": {
+    "RU": "Результаты в цифрах",
+    "EN": "What we do"
+  },
+  "description": {
+    "RU": "Немного статистики по нашей работе",
+    "EN":
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nInteger accumsan diam at nibh tempus, in semper nisi ullamcorper."
+  },
+  "numbers": [
+    {
+      "number": 24,
+      "text": {
+        "RU": "реализованных проекта",
+        "EN": "Finished projects"
+      }
+    },
+    {
+      "number": 300,
+      "text": {
+        "RU": "участников IT сообщества",
+        "EN": "Happy customers"
+      }
+    },
+    {
+      "number": 13,
+      "text": {
+        "RU": "внутренних разработок",
+        "EN": "Updates made"
+      }
+    },
+    {
+      "number": 12,
+      "text": {
+        "RU": "созданных IT мероприятий",
+        "EN": "Theme features"
+      }
+    }
+  ]
+}

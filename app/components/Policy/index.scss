@@ -1,0 +1,114 @@
+@import "../../global-styles/global-params";
+
+.policy {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+}
+
+.policy__close {
+  display: none;
+}
+
+.policy__text_wrap {
+  background-color: #ffffff;
+  padding: 30px;
+  @media screen and (max-width: 600px) {
+    padding: 10px;
+  }
+  width: 90%;
+  max-width: 800px;
+  height: 70vh;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -35vh;
+  overflow-y: scroll;
+  box-shadow: 0 0 10px #000;
+}
+
+.policy__title {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Calibri, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  @media screen and (max-width: 600px) {
+    font-size: 18px;
+    line-height: 1;
+  }
+  text-align: center;
+}
+
+.policy__paragraph_title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Calibri, sans-serif;
+  color: $corporate-color;
+  font-weight: bold;
+  font-size: 20px;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+  text-align: center;
+}
+
+.policy__paragraph_text {
+  text-align: justify;
+  font-family: Calibri, sans-serif;
+  text-indent: 1.5em;
+  font-size: 15px;
+  @media screen and (max-width: 600px) {
+    font-size: 13px;
+  }
+}
+
+.policy__paragraph_note {
+  font-style: italic;
+}
+
+.policy__paragraph_link {
+  color: $corporate-color;
+  border-bottom: 1px solid $corporate-color;
+}
+
+.policy__paragraph_link:hover {
+  text-decoration: none;
+}
+
+.policy__button_wrap {
+  margin-right: -50px;
+  @media screen and (max-width: 600px) {
+    margin-right: 0;
+  }
+  text-align: right;
+}
+
+.policy__button {
+  margin-top: -30px;
+  position: fixed;
+  @media screen and (max-width: 600px) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: black;
+    margin-top: -3px;
+    font-size: 18px;
+  }
+  opacity: 0.5;
+  font-size: 25px;
+  color: white;
+}
+.policy__button:focus {
+  outline: none;
+}
+.policy__button:hover {
+  opacity: 1;
+}

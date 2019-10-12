@@ -1,0 +1,10 @@
+{
+  "not_found": {
+    "RU": "Страница не найдена.",
+    "EN": "Page not found."
+  },
+  "return": {
+    "RU": "Вернуться на сайт",
+    "EN": "Return to site"
+  }
+}

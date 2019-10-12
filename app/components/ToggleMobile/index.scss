@@ -1,0 +1,14 @@
+@import "../../global-styles/global-params";
+
+.toggle-mobile__wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-mobile__lang_active {
+  color: $corporate-color;
+}
+
+.toggle-mobile__button:focus {
+  outline: none;
+}

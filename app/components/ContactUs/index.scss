@@ -1,0 +1,131 @@
+@import "../../global-styles/global-params";
+
+.contact-us {
+  padding-top: 60px;
+}
+
+.contact-us__container {
+  padding-bottom: 3rem;
+  background-color: $additionalColor;
+}
+
+.contact-us__row {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-us__col {
+  padding: 30px;
+  @media screen and (max-width: 767px) {
+    padding: 30px 15px;
+  }
+}
+
+.contact-us__col_left {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.contact-us__col_title {
+  margin-bottom: 5px;
+}
+
+.contact-us__col_title_text {
+  font-family: $font-family_title;
+  font-size: 22px;
+  @media screen and (max-width: 1025px) {
+    font-size: 19px;
+  }
+}
+
+.contact-us__col_title_text_bold {
+  font-weight: bold;
+}
+
+.contact-us__contact_wrap {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.contact-us__contact_title {
+  font-family: $font-family_title;
+  font-weight: 700;
+  font-size: 14px;
+  @media screen and (max-width: 300px) {
+    font-size: 10px;
+  }
+}
+
+.contact-us__contact_info {
+  font-family: $font-family_common;
+  color: #8d8d8d;
+  font-size: 13px;
+  @media screen and (max-width: 300px) {
+    font-size: 10px;
+  }
+}
+
+.contact-us__contact_link:hover {
+  color: $corporate-color;
+  text-decoration: none;
+  border-bottom: 1px $corporate-color solid;
+}
+
+.contact-us__icon {
+  min-width: 40px !important;
+  margin-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.contact-us__i {
+  font-size: 30px;
+}
+
+.contact-us__input {
+  margin-bottom: 15px;
+  height: 50px;
+}
+
+.contact-us__input, .contact-us__textarea {
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: $font-family_common;
+  font-size: 13px;
+}
+.contact-us__input:focus, .contact-us__textarea:focus {
+  outline: none;
+  border: 1px solid $corporate-color;
+}
+
+.contact-us__textarea {
+  resize: none;
+  overflow: hidden;
+  height: 120px;
+}
+
+.contact-us__button {
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 0;
+  background-color: $corporate-color;
+  border-radius: 500px;
+  text-align: center;
+}
+.contact-us__button:focus {
+  outline: none;
+}
+.contact-us__button:hover {
+  background-color: #2B84AF;
+}
+
+.contact-us__button_text {
+  color: #ffffff;
+  font-family: $font-family_common;
+  font-size: 15px;
+  font-weight: bold;
+}

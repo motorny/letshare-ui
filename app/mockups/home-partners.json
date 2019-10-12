@@ -1,0 +1,20 @@
+{
+  "title": {
+    "RU": "КЛИЕНТЫ И ПАРТНЁРЫ",
+    "EN": "Partners"
+  },
+  "slides": [
+    {
+      "img_url": "/partners_vsm.png"
+    },
+    {
+      "img_url": "/partners_polytech.png"
+    },
+    {
+      "img_url": "/partners_comitet.png"
+    },
+    {
+      "img_url": "/partners_devfest.png"
+    }
+  ]
+}

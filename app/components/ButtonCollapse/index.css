@@ -1,0 +1,44 @@
+.button-collapse__button {
+  display: flex;
+  padding: 20px;
+  margin-bottom: 1px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.button-collapse__button:focus {
+  outline: none;
+}
+
+.button-collapse__button_open {
+  color: #ffffff;
+  background-color: #2a729c;
+}
+
+.button-collapse__button_close {
+  background-color: #f4f4f4;
+}
+
+.button-collapse__ellipsis {
+  margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 14px;
+  width: 14px;
+}
+
+.button-collapse__collapse {
+  margin: 0 15px 0 25px;
+}
+
+.button-collapse__text {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  transition: 0.5s ease;
+}
+@media screen and (max-width: 1000px) {
+  .button-collapse__text {
+    font-size: 13px;
+  }
+}

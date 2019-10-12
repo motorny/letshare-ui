@@ -1,0 +1,25 @@
+@import "../../global-styles/global-params";
+
+.toggle__button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0.3em;
+}
+
+.toggle__language {
+  display: flex;
+  font-family: $font-family_common;
+  font-size: 15px;
+}
+
+.toggle__flex {
+  display: flex;
+}
+
+.toggle__border {
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background: #2a729c;
+  transition: 0.2s linear;
+}

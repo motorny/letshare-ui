@@ -1,0 +1,72 @@
+@import "../../global-styles/global-params";
+
+.response {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+}
+
+.response__text_wrap {
+  background-color: #ffffff;
+  padding: 30px;
+  @media screen and (max-width: 600px) {
+    padding: 15px;
+  }
+  width: 80%;
+  max-width: 600px;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -10vh;
+  box-shadow: 0 0 10px #000;
+}
+
+.response__title {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Calibri, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  @media screen and (max-width: 600px) {
+    font-size: 18px;
+    line-height: 1;
+  }
+  text-align: center;
+}
+
+.response__button_wrap {
+  margin-right: -35px;
+  @media screen and (max-width: 600px) {
+    margin-right: 0;
+  }
+  text-align: right;
+}
+
+.response__button {
+  margin-top: -30px;
+  position: fixed;
+  @media screen and (max-width: 600px) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: black;
+    margin-top: -3px;
+    font-size: 18px;
+  }
+  opacity: 0.5;
+  font-size: 25px;
+  color: white;
+}
+.response__button:focus {
+  outline: none;
+}
+.response__button:hover {
+  opacity: 1;
+}
