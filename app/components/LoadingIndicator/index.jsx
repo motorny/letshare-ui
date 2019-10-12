@@ -3,8 +3,8 @@ import React from 'react';
 import Circle from './Circle';
 import Wrapper from './Wrapper';
 
-const LoadingIndicator = () => (
-  <Wrapper>
+const LoadingIndicator = ({style}) => (
+  <Wrapper style={style}>
     <Circle />
     <Circle rotate={30} delay={-1.1} />
     <Circle rotate={60} delay={-1} />
