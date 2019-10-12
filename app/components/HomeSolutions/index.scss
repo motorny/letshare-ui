@@ -1,11 +1,9 @@
 @import "../../global-styles/global-params";
 
 .home-solutions {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 130px 0;
-  @media screen and (max-width: 767px) {
-    padding: 60px 0;
+  margin: 130px auto;
+  @media screen and (max-width: 992px) {
+    margin: 60px auto;
   }
   @media screen and (max-width: 576px) {
     width: 80%;
@@ -15,12 +13,14 @@
   }
 }
 
+.home-solutions__title {
+  text-align: center;
+}
+
 .home-solutions__title_text {
-  font-size: 24px;
+  font-size: 25px;
   font-family: $font-family_title;
-  @media screen and (max-width: 1000px) {
-    font-size: 20px;
-  }
+  font-weight: bold;
 }
 
 .home-solutions__divider {
@@ -38,20 +38,39 @@
 
 
 .home-solutions__description1 {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     margin-bottom: 25px;
   }
 }
 
 .home-solutions__slide {
+  padding: 0 10px 15px 10px;
+  text-align: center;
   width: calc(50% - 15px);
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     width: 100%;
   }
 }
 
 .home-solutions__slide_img {
   width: 100%;
+}
+
+.home-solutions__slide_title {
+  margin: 10px 0;
+  font-size: 17px;
+  min-height: 3em;
+  @media screen and (max-width: 600px) {
+    min-height: auto;
+  }
+  font-weight: bold;
+  font-family: $font-family_title;
+}
+
+.home-solutions__slide_description {
+  margin: 10px 0;
+  font-size: 15px;
+  font-family: $font-family_common;
 }
 
 .home-solutions .swiper-pagination {

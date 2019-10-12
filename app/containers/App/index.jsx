@@ -20,31 +20,31 @@ import ScrollToTop from '../../components/ScrollToTop';
 import './index.css';
 
 export default class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <CookieBanner/>
-                <a id="top"/>
-                <div className="app__theme">
-                    <ScrollToTop>
-                        <Helmet titleTemplate="%s - SITE" defaultTitle="SITE">
-                            <meta name="description" content="A SITE application"/>
-                        </Helmet>
-                        <Header/>
-                        <Switch>
-                            {routes.map((route, i) => (
-                                <Route
-                                    key={i}
-                                    path={route.path}
-                                    exact={route.exact}
-                                    component={route.component}
-                                />
-                            ))}
-                        </Switch>
-                        <Footer/>
-                    </ScrollToTop>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <CookieBanner/>
+        <a id="top"/>
+        <div className="app__theme">
+          <ScrollToTop>
+            <Helmet titleTemplate="ITS | %s" defaultTitle="ITS | Разработка ПО">
+              <meta name="description" content="A SITE application"/>
+            </Helmet>
+            <Header/>
+            <Switch>
+              {routes.map((route, i) => (
+                <Route
+                  key={i}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
+              ))}
+            </Switch>
+            <Footer/>
+          </ScrollToTop>
+        </div>
+      </div>
+    );
+  }
 }

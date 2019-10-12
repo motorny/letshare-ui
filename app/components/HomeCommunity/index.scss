@@ -1,11 +1,7 @@
 @import "../../global-styles/global-params";
 
 .home-community {
-  margin: 3rem auto;
-}
-
-.home-community__row {
-  padding-top: 70px;
+  margin: 100px auto;
 }
 
 .home-community__img_col {
@@ -55,12 +51,12 @@
 
 .home-community__a {
   color: $corporate-color;
-  font-weight: bold;
+  font-weight: 900;
+  border-bottom: 1px solid $corporate-color;
 }
 .home-community__a:hover {
   color: $corporate-color;
   text-decoration: none;
-  border-bottom: 1px solid $corporate-color;
 }
 
 .home-community__give {
@@ -72,6 +68,6 @@
 }
 
 .home-community__list_arrow {
-  padding-right: 10px;
+  margin-right: 10px;
   font-size: 12px;
 }

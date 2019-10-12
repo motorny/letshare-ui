@@ -1,14 +1,14 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
+import PropTypes from 'prop-types';
 
-import {getLocale} from "../../cookieManager";
+import { getLocale } from "../../cookieManager";
+import { serverUrl } from '../../utils/constants';
 
 import '../../../node_modules/react-id-swiper/src/styles/css/swiper.css';
 import './index.css';
 
-import homePartners from '../../mockups/home-partners.json';
-
-const HomePartners = () => {
+const HomePartners = (props) => {
     const params = {
         slidesPerView: 'auto',
         spaceBetween: 0,
@@ -26,21 +26,28 @@ const HomePartners = () => {
     };
     const locale = getLocale();
     return (
-        <div className="home-partners">
-            <div className="home-partners__title_font">{homePartners.title[locale]}</div>
-            <div className="home-partners__swiper_wrap">
-                <Swiper {...params}>
-                    {homePartners.slides.map(el => (
-                        <div key={el.img_url} className="home-partners__swiper-slide">
-                            <div>
-                                <img src={el.img_url} alt="partner" className="home-partners__partner_img" />
-                            </div>
+      <div className="home-partners">
+          <div className="home-partners__title_font">{props.content.title[locale]}</div>
+          <div className="home-partners__swiper_wrap">
+              <Swiper {...params}>
+                  {props.partners.map((el, index) => (
+                    <div key={index} className="home-partners__swiper-slide">
+                        <div>
+                            <img
+                              src={serverUrl + el.logo_v2_h3.url}
+                              alt="partner"
+                              className="home-partners__partner_img"/>
                         </div>
-                    ))}
-                </Swiper>
-            </div>
-        </div>
+                    </div>
+                  ))}
+              </Swiper>
+          </div>
+      </div>
     );
+};
+HomePartners.propTypes = {
+    content: PropTypes.object,
+    partners: PropTypes.array
 };
 
 export default HomePartners;

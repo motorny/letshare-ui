@@ -3,15 +3,7 @@
   "tel_href": "tel:+79213620389",
   "mail": "direct@itsociety.su",
   "mail_href": "mailto:direct@itsociety.su?subject=From website",
-  "address": {
-    "RU": "195251 Санкт-Петербург, ул. Политехническая, 29",
-    "EN": "29 Polytekhnicheskaya St. Petersburg 195251, Russia"
-  },
   "link_vk": "https://vk.com/itsocietyspb",
   "link_instagram": "https://www.instagram.com/itsociety_su/",
-  "link_github": "https://github.com/itsocietysu",
-  "link_facebook": "https://www.facebook.com/groups/itsocietyspb/",
-  "link_telegram": "https://t.me/itsocietyspb",
-  "link_join": "https://goo.gl/4nq35W",
-  "link_presentation": "/Lab_4.pdf"
+  "link_join": "https://vk.com/itsocietyspb?w=wall-150683669_62"
 }

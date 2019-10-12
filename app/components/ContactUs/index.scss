@@ -1,9 +1,5 @@
 @import "../../global-styles/global-params";
 
-.contact-us {
-  padding-top: 60px;
-}
-
 .contact-us__container {
   padding-bottom: 3rem;
   background-color: $additionalColor;
@@ -16,31 +12,25 @@
 }
 
 .contact-us__col {
-  padding: 30px;
+  padding: 40px;
   @media screen and (max-width: 767px) {
     padding: 30px 15px;
   }
 }
 
-.contact-us__col_left {
-  margin-top: auto;
-  margin-bottom: auto;
-}
 
 .contact-us__col_title {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .contact-us__col_title_text {
   font-family: $font-family_title;
+  font-weight: bold;
   font-size: 22px;
   @media screen and (max-width: 1025px) {
     font-size: 19px;
   }
-}
-
-.contact-us__col_title_text_bold {
-  font-weight: bold;
 }
 
 .contact-us__contact_wrap {
@@ -73,6 +63,7 @@
 }
 
 .contact-us__icon {
+  text-align: center;
   min-width: 40px !important;
   margin-right: 10px;
   margin-top: auto;
@@ -128,4 +119,8 @@
   font-family: $font-family_common;
   font-size: 15px;
   font-weight: bold;
+}
+
+.contact-us .grecaptcha-badge {
+  display: none !important;
 }

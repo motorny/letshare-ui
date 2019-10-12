@@ -1,5 +1,5 @@
 {
-  "title_ok": {
+  "0": {
     "str_1": {
       "RU": "Ваше сообщение успешно отправлено!",
       "EN": "Your message has been sent!"
@@ -9,14 +9,14 @@
       "EN": "We will answer soon."
     }
   },
-  "title_err": {
+  "1": {
     "str_1": {
       "RU": "Во время отправки произошла ошибка.",
       "EN": "Error while sending message."
     },
     "str_2": {
       "RU": "Позвоните нам, пока мы все чиним.",
-      "EN": "Please call us."
+      "EN": "Call us while we are repairing."
     }
   }
 }

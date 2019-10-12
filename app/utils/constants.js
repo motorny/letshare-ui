@@ -1,50 +1,15 @@
-import { getSession } from '../cookieManager';
-
 export const RESTART_ON_REMOUNT = '@@saga-injector/restart-on-remount';
 export const DAEMON = '@@saga-injector/daemon';
 export const ONCE_TILL_UNMOUNT = '@@saga-injector/once-till-unmount';
 
 export const colors = {
-  base: '#5b7bbb',
+  base: '#2a729c',
 };
 
-export const FEED_CFG = 'feed';
-export const LOCATION_CFG = 'location';
-export const QUEST_CFG = 'quest';
+export const emailApi = 'https://itsociety.su/api/email';
 
-const startUrl = 'http://each.itsociety.su:4201/each/';
+export const serverUrl = 'http://80.78.255.236:1337';
 
-export const urls = {
-  feed: {
-    add: `${startUrl}feed`,
-    update: `${startUrl}feed`,
-    delete: eid => `${startUrl}feed/${eid}?hard=true`,
-    tape: (reqProps, firstF, lastF) =>
-      `${startUrl}feed/tape?FirstFeed=${firstF}&LastFeed=${lastF}`,
-    get_by_id: eid => `${startUrl}feed/${eid}`,
-  },
-  location: {
-    add: `${startUrl}location`,
-    update: '',
-    delete: eid => `${startUrl}location/${eid}?hard=true`,
-    tape: (reqProps, firstL, lastL) =>
-      `${startUrl}location/tape?FirstLocation=${firstL}&LastLocation=${lastL}`,
-    startswith: value => `${startUrl}location?startswith=${value}`,
-  },
-  quest: {
-    add: `${startUrl}game`,
-    update: `${startUrl}game`,
-    delete: eid => `${startUrl}game/${eid}?hard=true`,
-    tape: reqProps => `${startUrl}game/all/museum/${reqProps.museumId}`,
-  },
-  auth: {
-    access_token_url: `${startUrl}token/get`,
-    token_info_url: `${startUrl}token/info?access_token=${getSession()}&type=each`,
-    revoke_token_url: `${startUrl}token/revoke`,
-    oauth2RedirectUrl: '/auth',
-  },
-  scenario: {
-    get: eid => `${startUrl}scenario/${eid}`,
-    update: `${startUrl}scenario`,
-  },
-};
+export const requestDataUrl = `${serverUrl}/graphql`;
+
+export const CAPTCHA_KEY = '6LfH7KsUAAAAAE9bCsjxT03vsKFuEmNwytHjyTsX';

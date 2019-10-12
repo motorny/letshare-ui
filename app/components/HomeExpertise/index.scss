@@ -82,41 +82,67 @@
 }
 
 .home-expertise__service_icon {
-  font-size: 2.5rem !important;
+  font-size: 3.5rem !important;
   color: $corporate-color;
 }
 
 .home-expertise__button_wrap {
   display: inline-block;
-  margin-top: 15px;
   text-align: center;
   border-radius: 500px;
-  border: 2px solid rgba(255,255,255,0.1);
-  cursor: pointer;
   transition: .3s ease-in-out;
+  cursor: pointer;
 }
-
 .home-expertise__button_wrap:hover {
   letter-spacing: 0.1em;
   transition: .3s ease-in-out;
-  border: 2px solid rgba(255,255,255,0.5);
-}
-
-.home-expertise__button_wrap:hover .home-expertise__button {
-  color: #ffffff;
 }
 
 .home-expertise__button {
-  padding: 0 35px;
   line-height: 50px;
   font-size: 14px;
-  color: #c7d4d8;
+  font-family: $font-family_common;
   @media screen and (max-width: 600px) {
     line-height: 35px;
     font-size: 12px;
   }
 }
-
 .home-expertise__button:hover {
   text-decoration: none;
+}
+
+.home-expertise__button_more_wrap {
+  margin-top: 15px;
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.home-expertise__button_more_wrap:hover {
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.home-expertise__button_more_wrap:hover .home-expertise__button_more {
+  color: #ffffff;
+}
+
+.home-expertise__button_more {
+  padding: 0 35px;
+  color: #c7d4d8;
+}
+
+.home-expertise__button_contact_wrap {
+  background-color: #28668E;
+}
+
+.home-expertise__button_contact_wrap:hover {
+  background-color: $corporate-color;
+}
+
+.home-expertise__button_contact {
+  padding: 0 45px;
+  font-weight: bold;
+  color: white;
+}
+
+.home-expertise__col_button {
+  text-align: center;
 }

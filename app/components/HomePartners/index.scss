@@ -23,7 +23,10 @@
 }
 
 .home-partners {
-  margin: 10vw auto 5vw auto;
+  margin: 10vw auto 70px auto;
+  @media screen and (max-width: 813px) {
+    margin-bottom: 35px;
+  }
 }
 
 .home-partners__swiper_wrap {

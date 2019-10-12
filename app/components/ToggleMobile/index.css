@@ -1,12 +1,11 @@
 .toggle-mobile__wrap {
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .toggle-mobile__lang_active {
-  color: #2a729c;
-}
+  color: #2a729c; }
 
 .toggle-mobile__button:focus {
-  outline: none;
-}
+  outline: none; }
+
+/*# sourceMappingURL=index.css.map */

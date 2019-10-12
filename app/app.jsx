@@ -29,18 +29,6 @@ import 'file-loader?name=[name].[ext]!./.htaccess'; // eslint-disable-line impor
 import '!file-loader?name=[name].[ext]!../public/favicon.ico';
 import '!file-loader?name=[name].[ext]!./images/logo.svg';
 import '!file-loader?name=[name].[ext]!./images/photo.png';
-import '!file-loader?name=[name].[ext]!./images/partners_comitet.png';
-import '!file-loader?name=[name].[ext]!./images/partners_devfest.png';
-import '!file-loader?name=[name].[ext]!./images/partners_polytech.png';
-import '!file-loader?name=[name].[ext]!./images/partners_vsm.png';
-
-import '!file-loader?name=[name].[ext]!./images/home-main__background.jpg';
-import '!file-loader?name=[name].[ext]!./images/home-solutions__slide_1.jpg';
-import '!file-loader?name=[name].[ext]!./images/home-solutions__slide_2.jpg';
-import '!file-loader?name=[name].[ext]!./images/home-solutions__slide_3.jpg';
-import '!file-loader?name=[name].[ext]!./images/home-solutions__slide_4.jpg';
-import '!file-loader?name=[name].[ext]!./images/home-work__background.jpg';
-import '!file-loader?name=[name].[ext]!./images/home-community.png';
 
 // Load the fonts
 import '!file-loader?name=[name].[ext]!./fonts/Montserrat-Regular.ttf';
@@ -49,6 +37,11 @@ import configureStore from './configureStore';
 
 // Import CSS reset and Global Styles
 import './global-styles/global-styles';
+
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
+dom.watch();
 
 // Create redux store with history
 const initialState = {};

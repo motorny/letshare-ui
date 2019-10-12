@@ -1,44 +1,44 @@
 {
   "title": {
     "RU": "Политика конфиденциальности",
-    "EN": "Политика конфиденциальности"
+    "EN": "Privacy Policy"
   },
   "agreement": {
     "title": {
       "RU": "СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ ДЛЯ ПОСЕТИТЕЛЕЙ САЙТА",
-      "EN": "СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ ДЛЯ ПОСЕТИТЕЛЕЙ САЙТА"
+      "EN": "CONSENT TO HANDLING PERSONAL DATA FOR VISITORS OF THE SITE"
     },
     "paragraphs": [
       {
         "RU":
           "Продолжая работу на сайте я выражаю свое согласие ITS (ООО «АйТиЭС») на автоматизированную обработку моих персональных данных (файлы cookie, сведения о действиях пользователя на сайте, сведения об оборудовании пользователя, дата и время сессии), в т.ч. с использованием метрических программ Яндекс.Метрика, Google Analytics и других, с совершением действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, обезличивание, блокирование, удаление, уничтожение, передача (предоставление, доступ), в том числе трансграничная, партнёрам ITS, предоставляющим сервис по указанным метрическим программам. Обработка персональных данных осуществляется в целях улучшения работы сайта, совершенствования решений и услуг компании, улучшения клиентского опыта, определения предпочтений пользователя, предоставления целевой информации по решениям и услугам ITS и его партнёров.",
         "EN":
-          "Продолжая работу на сайте я выражаю свое согласие ITS (ООО «АйТиЭС») на автоматизированную обработку моих персональных данных (файлы cookie, сведения о действиях пользователя на сайте, сведения об оборудовании пользователя, дата и время сессии), в т.ч. с использованием метрических программ Яндекс.Метрика, Google Analytics и других, с совершением действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, обезличивание, блокирование, удаление, уничтожение, передача (предоставление, доступ), в том числе трансграничная, партнёрам ITS, предоставляющим сервис по указанным метрическим программам. Обработка персональных данных осуществляется в целях улучшения работы сайта, совершенствования решений и услуг компании, улучшения клиентского опыта, определения предпочтений пользователя, предоставления целевой информации по решениям и услугам ITS и его партнёров."
+          "Continuing to work on the site, I agree with ITS (\"ITS\" LLC) to automatically process my personal data (cookies, information about user actions on the site, information about user equipment, date and time of the session), including using the metric programs Yandex.Metrica, Google Analytics and others, with performing actions: collecting, recording, organizing, accumulating, storing, updating (updating, changing), extracting, using, depersonalizing, blocking, deleting, destroying, transferring (providing, access), including cross-border access, to ITS partners providing service on the specified metric programs. The processing of personal data is carried out in order to improve the operation of the site, improve the company's solutions and services, improve customer experience, determine user preferences, provide targeted information on ITS solutions and services and its partners."
       },
       {
         "RU":
           "Настоящее согласие действует с момента его предоставления и в течение всего периода использования сайта.",
         "EN":
-          "Настоящее согласие действует с момента его предоставления и в течение всего периода использования сайта."
+          "This consent is valid from the moment of its submission and during the entire period of use of the site."
       },
       {
         "RU":
           "В случае отказа от обработки персональных данных метрическими программами я проинформирован о необходимости прекратить использование сайта или отключить файлы cookie в настройках браузера.",
         "EN":
-          "В случае отказа от обработки персональных данных метрическими программами я проинформирован о необходимости прекратить использование сайта или отключить файлы cookie в настройках браузера."
+          "In case of refusal to process personal data by metric programs, I am informed about the need to stop using the site or disable cookies in the browser settings."
       }
     ]
   },
   "cookiePolicy": {
     "title": {
       "RU": "УСЛОВИЯ ИСПОЛЬЗОВАНИЯ COOKIE-ФАЙЛОВ",
-      "EN": "УСЛОВИЯ ИСПОЛЬЗОВАНИЯ COOKIE-ФАЙЛОВ"
+      "EN": "COOKIES-FILES TERMS OF USE"
     },
     "paragraph_1": {
       "RU":
         "Данный веб-сайт, как и большинство других, использует cookie-файлы с целью повышения удобства и эффективности работы пользователя.",
       "EN":
-        "Данный веб-сайт, как и большинство других, использует cookie-файлы с целью повышения удобства и эффективности работы пользователя."
+        "This website, like most others, uses cookies to improve the user experience and efficiency."
     },
     "paragraph_2": {
       "link": "http://www.aboutcookies.org/",
@@ -46,7 +46,7 @@
         "RU":
           "С целью предоставления решений и услуг, наиболее отвечающих вашим потребностям, нам необходимо сохранять и накапливать информацию о том, как вы используете данный веб-сайт. Для этого используются небольшие по размеру текстовые файлы, которые называются «cookie». Cookie-файлы содержат небольшие объемы информации и загружаются на ваш компьютер или иное устройство с сервера данного веб-сайта. При каждом следующем посещении данного веб-сайта ваш браузер посылает cookie-файлы обратно на сервер для того, чтобы возможно было идентифицировать вас и запомнить ваши пользовательские предпочтения. Более подробную информацию о cookie-файлах и принципах их работы можно найти на ресурсе ",
         "EN":
-          "С целью предоставления решений и услуг, наиболее отвечающих вашим потребностям, нам необходимо сохранять и накапливать информацию о том, как вы используете данный веб-сайт. Для этого используются небольшие по размеру текстовые файлы, которые называются «cookie». Cookie-файлы содержат небольшие объемы информации и загружаются на ваш компьютер или иное устройство с сервера данного веб-сайта. При каждом следующем посещении данного веб-сайта ваш браузер посылает cookie-файлы обратно на сервер для того, чтобы возможно было идентифицировать вас и запомнить ваши пользовательские предпочтения. Более подробную информацию о cookie-файлах и принципах их работы можно найти на ресурсе "
+          "In order to provide solutions and services that best meet your needs, we need to save and accumulate information about how you use this website. To do this, we use small-sized text files, which are called \"cookies\". Cookies contain small amounts of information and are downloaded to your computer or other device from the server of this website. Every time you visit this website, your browser sends cookies back to the server so that you can identify you and remember your user preferences. More information about cookies and how they work can be found on "
       }
     },
     "paragraphs": [
@@ -54,25 +54,25 @@
         "RU":
           "Кнопки доступа к социальным сетям используются для того, чтобы наши пользователи могли поделиться ссылкой на веб-страницу или сделать электронную закладку. Данные кнопки являются ссылками на веб-сайты социальных сетей, принадлежащих третьим лицам, которые, в свою, очередь могут фиксировать информацию о вашей активности в Интернете, в том числе на данном веб-сайте. Пожалуйста, ознакомьтесь с соответствующими условиями использования и политикой конфиденциальности таких сайтов для понимания того, как они используют ваши данные, и того, как можно отказаться от использования ими ваших данных или удалить их.",
         "EN":
-          "Кнопки доступа к социальным сетям используются для того, чтобы наши пользователи могли поделиться ссылкой на веб-страницу или сделать электронную закладку. Данные кнопки являются ссылками на веб-сайты социальных сетей, принадлежащих третьим лицам, которые, в свою, очередь могут фиксировать информацию о вашей активности в Интернете, в том числе на данном веб-сайте. Пожалуйста, ознакомьтесь с соответствующими условиями использования и политикой конфиденциальности таких сайтов для понимания того, как они используют ваши данные, и того, как можно отказаться от использования ими ваших данных или удалить их."
+          "Buttons for accessing social networks are used to enable our users to share a link to a web page or make an electronic bookmark. These buttons are links to websites of social networks owned by third parties, which can record information about your activity on the Internet, including this website. Please review the respective terms of use and privacy policies of such sites to understand how they use your data, and how you can opt out of using your data or delete them."
       },
       {
         "RU":
           "Иногда на данном веб-сайте мы используем сторонние веб-сервисы для отображения тех или иных элементов, например, для отображения изображений, просмотра видео или организации голосований/опросов. Так же как и в случае с кнопками доступа к социальным сетям, мы не можем препятствовать сбору этими сайтами или внешними доменами информации о том, как вы используете содержание сайта.",
         "EN":
-          "Иногда на данном веб-сайте мы используем сторонние веб-сервисы для отображения тех или иных элементов, например, для отображения изображений, просмотра видео или организации голосований/опросов. Так же как и в случае с кнопками доступа к социальным сетям, мы не можем препятствовать сбору этими сайтами или внешними доменами информации о том, как вы используете содержание сайта."
+          "Sometimes on this website we use third-party web services to display certain elements, for example, to display images, watch videos or organize polls. As with the social network access buttons, we cannot prevent these sites or external domains from gathering information about how you use site content."
       },
       {
         "RU":
           "Также наш веб-сайт содержит ссылки на другие веб-сайты, поддерживаемыми третьими сторонами. ITS не несет ответственности за правила или политику защиты информации, принятые на этих ресурсах. Пожалуйста, ознакомьтесь с политикой защиты информации каждого посещаемого вами сайта.",
         "EN":
-          "Также наш веб-сайт содержит ссылки на другие веб-сайты, поддерживаемыми третьими сторонами. ITS не несет ответственности за правила или политику защиты информации, принятые на этих ресурсах. Пожалуйста, ознакомьтесь с политикой защиты информации каждого посещаемого вами сайта."
+          "Also, our website contains links to other websites supported by third parties. ITS is not responsible for the rules or information protection policies adopted on these resources. Please read the information protection policies of each website you visit."
       },
       {
         "RU":
           "По собственному усмотрению мы можем периодически вносить изменения или дополнения в настоящие Условия использования cookie-файлов. Мы призываем вас периодически перечитывать настоящие Условия использования cookie-файлов для ознакомления со способами их использования.",
         "EN":
-          "По собственному усмотрению мы можем периодически вносить изменения или дополнения в настоящие Условия использования cookie-файлов. Мы призываем вас периодически перечитывать настоящие Условия использования cookie-файлов для ознакомления со способами их использования."
+          "At our sole discretion, we may periodically make changes or additions to the Cookies Terms of Use. We encourage you to periodically re-read the Cookies Terms of Use to become familiar with how to use them."
       }
     ]
   },
@@ -81,42 +81,41 @@
       "RU":
         "УСЛОВИЯ И ПРИНЦИПЫ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ, В ТОМ ЧИСЛЕ В СООТВЕТСТВИИ С GDPR*",
       "EN":
-        "УСЛОВИЯ И ПРИНЦИПЫ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ, В ТОМ ЧИСЛЕ В СООТВЕТСТВИИ С GDPR*"
+        "CONDITIONS AND PRINCIPLES OF PROCESSING OF PERSONAL DATA, INCLUDING IN ACCORDANCE WITH GDPR*"
     },
     "paragraphs_begin": [
       {
         "RU":
           "ITS очень серьезно относится к вопросам конфиденциальности и безопасности информации. Защита ваших персональных данных — один из наших ключевых приоритетов.",
         "EN":
-          "ITS очень серьезно относится к вопросам конфиденциальности и безопасности информации. Защита ваших персональных данных — один из наших ключевых приоритетов."
+          "ITS takes privacy and security of information very seriously. Protecting your personal data is one of our key priorities."
       },
       {
         "RU":
           "В некоторых областях сайта мы просим вас предоставить вашу личную информацию. Эта информация не разглашается и используется исключительно в целях оптимальной поддержки вашего взаимодействия с ITS.",
         "EN":
-          "В некоторых областях сайта мы просим вас предоставить вашу личную информацию. Эта информация не разглашается и используется исключительно в целях оптимальной поддержки вашего взаимодействия с ITS."
+          "In some places of the site we ask you to provide your personal information. This information is not disclosed and is used only for the purpose of optimally supporting your interaction with ITS."
       },
       {
         "RU":
           "Мы обрабатываем ваши персональные данные, собранные на законных основаниях и в рамках четко сформулированных целей, характерных для взаимодействия компании со всеми сторонами:",
         "EN":
-          "Мы обрабатываем ваши персональные данные, собранные на законных основаниях и в рамках четко сформулированных целей, характерных для взаимодействия компании со всеми сторонами:"
+          "We process your personal data collected legally and within the framework of clearly defined goals specific to the company's interaction with all parties:"
       }
     ],
     "list": [
       {
         "RU": "клиентами, потенциальными клиентами;",
-        "EN": "клиентами, потенциальными клиентами;"
+        "EN": "customers, potential customers;"
       },
       {
         "RU":
           "контрагентами и партнерами (как существующими, так и потенциальными);",
-        "EN":
-          "контрагентами и партнерами (как существующими, так и потенциальными);"
+        "EN": "contractors and partners (both existing and potential);"
       },
       {
         "RU": "сотрудниками и соискателями.",
-        "EN": "сотрудниками и соискателями."
+        "EN": "employees and applicants."
       }
     ],
     "paragraphs_end": [
@@ -124,26 +123,26 @@
         "RU":
           "Мы можем собирать ваши персональные данные, информацию о предпочтениях, совершенных действиях и т.п. при помощи веб-сайта и мобильных версий сайта для заранее определенных и законных целей.",
         "EN":
-          "Мы можем собирать ваши персональные данные, информацию о предпочтениях, совершенных действиях и т.п. при помощи веб-сайта и мобильных версий сайта для заранее определенных и законных целей."
+          "We may collect your personal data, information about preferences, actions performed, etc. using the website and mobile versions of the website for predetermined and legitimate purposes."
       },
       {
         "RU":
           "Мы можем передавать ваши персональные данные, в том числе трансгранично, строго при соблюдении требований законодательства.",
         "EN":
-          "Мы можем передавать ваши персональные данные, в том числе трансгранично, строго при соблюдении требований законодательства."
+          "We may transfer your personal data, including cross-border, strictly according to the law requirements."
       },
       {
         "RU":
           "Мы уважаем ваши права и свободы, в частности, связанные с вопросами обработки ваших персональных данных.",
         "EN":
-          "Мы уважаем ваши права и свободы, в частности, связанные с вопросами обработки ваших персональных данных."
+          "We respect your rights and freedoms, in particular, related to the processing of your personal data."
       }
     ],
     "GDPR": {
       "RU":
-        "*GDPR – Регламент №2016/679 Европейского парламента и Совета Европейского Союза «О защите физических лиц при обработке персональных данных и о свободном обращении таких данных» General Data Protection Regulation",
+        "*GDPR – Регламент №2016/679 Европейского парламента и Совета Европейского Союза \"О защите физических лиц при обработке персональных данных и о свободном обращении таких данных\" General Data Protection Regulation",
       "EN":
-        "*GDPR – Регламент №2016/679 Европейского парламента и Совета Европейского Союза «О защите физических лиц при обработке персональных данных и о свободном обращении таких данных» General Data Protection Regulation"
+        "*GDPR – Regulation No. 2016/679 of the European Parliament and of the Council of the European Union \"About the protection of individuals in the processing of personal data and the free circulation of such data\" General Data Protection Regulation"
     }
   }
 }

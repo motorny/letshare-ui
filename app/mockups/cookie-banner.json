@@ -2,11 +2,12 @@
   "using": {
     "RU":
       "ITS использует cookie для персонализации сервисов и вашего удобства. Продолжая использовать сайт, вы соглашаетесь с ",
-    "EN": "We use cookies. By continuing to use the site, you agree to "
+    "EN":
+      "ITS uses cookies to personalize services and your convenience. If you continue using this site, you agree with the company "
   },
   "using_2": {
     "RU": " компании.",
-    "EN": " of the company."
+    "EN": "."
   },
   "privacy": {
     "RU": "политикой конфиденциальности",

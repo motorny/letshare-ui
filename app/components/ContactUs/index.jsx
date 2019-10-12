@@ -1,155 +1,180 @@
 import React from 'react';
 import { Container, Row, Col } from "reactstrap";
-import 'whatwg-fetch'
+import ReCAPTCHA from "react-google-recaptcha";
+import PropTypes from 'prop-types';
 
-import { getLocale } from "../../cookieManager";
 import Response from "../Response";
+import GooglePolicy from '../GooglePolicy';
+import Contact from './contact';
+import { getLocale } from "../../cookieManager";
+import { post } from '../../utils/utils';
+import { CAPTCHA_KEY, emailApi } from '../../utils/constants';
 
 import './index.css';
 
-import contactUs from '../../mockups/contact-us.json';
-import constants from '../../mockups/constants.json';
-
-const Contact = ({title, info, className, href }) => (
-    <div className="contact-us__contact_wrap">
-        <div className="contact-us__icon">
-            <i className={className + ' contact-us__i'}/>
-        </div>
-        <div className="contact-us__contact_text">
-            <div className="contact-us__contact_title">
-                {title}
-            </div>
-            {href === undefined
-                ? <div className="contact-us__contact_info">{info}</div>
-                : <a href={href} className="contact-us__contact_info contact-us__contact_link">{info}</a>
-            }
-        </div>
-    </div>
-);
+const recaptchaRef = React.createRef();
 
 class ContactUs extends React.Component {
+    _isMounted = false;
+
     constructor(props) {
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.showNotificationError = this.showNotificationError.bind(this);
+        this.onChangeCaptcha = this.onChangeCaptcha.bind(this);
+        this.captchaCallback = this.captchaCallback.bind(this);
+        this.executeCaptcha = this.executeCaptcha.bind(this);
         this.showNotification = this.showNotification.bind(this);
         this.closeNotification = this.closeNotification.bind(this);
+        // 0 - ok, 1 - bad response
         this.state = {
             showResponse: false,
-            responseOk: true,
+            errorCode: 0,
         }
     }
 
+    componentDidMount() {
+        this._isMounted = true;
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     closeNotification() {
-        this.setState({
-            showResponse: false
-        });
+        if (this._isMounted) {
+            this.setState({
+                showResponse: false
+            });
+        }
     }
 
     showNotification(response) {
         this.setState({
             showResponse: true,
-            responseOk: response.status === 200
+            errorCode: response.status === 200 ? 0 : 1
         });
         setTimeout(this.closeNotification, 3000);
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        const name = event.target.name.value;
-        const mail = event.target.mail.value;
-        const text = event.target.text.value;
+    showNotificationError() {
+        console.log("Captcha errored");
+    }
 
-        window.fetch('http://80.78.255.236:8080/email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "fio": name,
-                "email": mail,
-                "question": text
-            } )
-        }).then(this.showNotification);
-        event.target.name.value = "";
-        event.target.mail.value = "";
-        event.target.text.value = "";
+    captchaCallback(value) {
+        let form = document.getElementById("form");
+        const name = form.name.value;
+        const mail = form.mail.value;
+        const text = form.text.value;
+        const params = {
+            "fio": name,
+            "email": mail,
+            "question": text,
+            "token": value
+        };
+
+        post(emailApi, params, this.showNotification);
+
+        form.name.value = "";
+        form.mail.value = "";
+        form.text.value = "";
+        recaptchaRef.current.reset();
+    }
+
+    onChangeCaptcha(value) {
+        const func = this.captchaCallback;
+        return new Promise(function(resolve, reject) {
+            func(value);
+            resolve();
+        });
+    }
+
+    executeCaptcha(event) {
+        event.preventDefault();
+        recaptchaRef.current.execute();
     }
 
     render() {
         const locale = getLocale();
         return (
-            <div className="contact-us" id="contacts">
-                <Container fluid className="contact-us__container">
-                    <Row className="contact-us__row">
-                        <Col xs="12" md="6" className="contact-us__col contact-us__col_left">
-                            <div className="contact-us__col_title">
-                            <span className="contact-us__col_title_text">
-                                <span className="contact-us__col_title_text_bold">
-                                    {contactUs.col_title_left.strong[locale]}
+          <div className="contact-us">
+              <Container fluid className="contact-us__container">
+                  <Row className="contact-us__row">
+                      <Col xs="12" md="6" className="contact-us__col">
+                          <div className="contact-us__col_title">
+                                <span className="contact-us__col_title_text">
+                                    {this.props.content.col_title_left[locale]}
                                 </span>
-                                {contactUs.col_title_left.common[locale]}
-                            </span>
-                            </div>
-                            <Contact
-                                title={contactUs.contacts_address.title[locale]}
-                                info={constants.address[locale]}
-                                className="fas fa-map-marker-alt"/>
-                            <Contact
-                                title={contactUs.contacts_mail.title[locale]}
-                                info={constants.mail}
-                                className="far fa-envelope"
-                                href={constants.mail_href}/>
-                            <Contact
-                                title={contactUs.contacts_tel.title[locale]}
-                                info={constants.tel}
-                                className="fas fa-phone"
-                                href={constants.tel_href}/>
-                            <Contact
-                                title={contactUs.contacts_add_info.title[locale]}
-                                info={contactUs.contacts_add_info.info[locale]}
-                                className="fas fa-info-circle"/>
-                        </Col>
-                        <Col xs="12" md="6" className="contact-us__col">
-                            <div className="contact-us__col_title">
-                            <span className="contact-us__col_title_text contact-us__col_title_text_bold">
-                                {contactUs.col_title_right[locale]}
-                            </span>
-                            </div>
-                            <div className="contact-us__col_title">
-                            <span className="contact-us__col_title_text">
-                                {contactUs.input_title[locale]}
-                            </span>
-                            </div>
-                            <form onSubmit={this.handleSubmit}>
-                                <input className="contact-us__input"
-                                       name="name"
-                                       type="text"
-                                       required
-                                       placeholder={contactUs.label_name[locale]}/>
-                                <input className="contact-us__input"
-                                       name="mail"
-                                       type="email"
-                                       required
-                                       placeholder={contactUs.label_email[locale]}/>
-                                <textarea className="contact-us__textarea"
-                                          name="text"
-                                          required
-                                          placeholder={contactUs.label_message[locale]}/>
-                                <input className="contact-us__button contact-us__button_text"
-                                       type="submit"
-                                       value={contactUs.button[locale]}/>
-                            </form>
-                        </Col>
-                    </Row>
-                </Container>
-                {this.state.showResponse
-                    ? <Response toggle={this.closeNotification.bind(this)}
-                                responseOk={this.state.responseOk}/>
-                    : <div/>
-                }
-            </div>
+                          </div>
+                          <Contact
+                            title={this.props.content.title_address[locale]}
+                            info={this.props.contacts.address[locale]}
+                            className="fas fa-map-marker-alt"
+                            href={this.props.contacts.address.link}
+                            newTab={true}/>
+                          <Contact
+                            title={this.props.content.title_email[locale]}
+                            info={this.props.contacts.email[locale]}
+                            className="fas fa-envelope"
+                            href={this.props.contacts.email.link}
+                            newTab={false}/>
+                          <Contact
+                            title={this.props.content.title_tel[locale]}
+                            info={this.props.contacts.tel[locale]}
+                            className="fas fa-phone"
+                            href={this.props.contacts.tel.link}
+                            newTab={false}/>
+                          <Contact
+                            title={this.props.content.title_add_info[locale]}
+                            info={this.props.content.add_info[locale]}
+                            className="fas fa-info-circle"/>
+                      </Col>
+                      <Col xs="12" md="6" className="contact-us__col" id="contacts">
+                          <div className="contact-us__col_title">
+                                <span className="contact-us__col_title_text">
+                                    {this.props.content.col_title_right[locale]}
+                                </span>
+                          </div>
+                          <form onSubmit={this.executeCaptcha} id="form">
+                              <input className="contact-us__input"
+                                     name="name"
+                                     type="text"
+                                     required
+                                     placeholder={this.props.content.input_name[locale]}/>
+                              <input className="contact-us__input"
+                                     name="mail"
+                                     type="email"
+                                     required
+                                     placeholder={this.props.content.input_email[locale]}/>
+                              <textarea className="contact-us__textarea"
+                                        name="text"
+                                        required
+                                        placeholder={this.props.content.input_message[locale]}/>
+                              <input className="contact-us__button contact-us__button_text"
+                                     type="submit"
+                                     value={this.props.content.button[locale]}/>
+                              <GooglePolicy/>
+                              <ReCAPTCHA
+                                ref={recaptchaRef}
+                                size="invisible"
+                                sitekey={CAPTCHA_KEY}
+                                onErrored={this.showNotificationError}
+                                onChange={this.onChangeCaptcha}/>
+                          </form>
+                      </Col>
+                  </Row>
+              </Container>
+              {this.state.showResponse
+                ? <Response toggle={this.closeNotification.bind(this)}
+                            errorCode={this.state.errorCode}/>
+                : <div/>
+              }
+          </div>
         );
     }
 }
+ContactUs.propTypes = {
+    content: PropTypes.object,
+    contacts: PropTypes.object
+};
 
 export default ContactUs;

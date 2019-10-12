@@ -3,7 +3,7 @@ $change-width: 1199px;
 
 .header {
   min-width: 280px;
-  z-index: 999;
+  z-index: 998;
   position: fixed;
   width: 100%;
   background-color: $blockColor;
@@ -157,5 +157,5 @@ $change-width: 1199px;
 
 .header__chevron {
   font-size: 20px;
-  line-height: 46px !important;
+  height: 46px !important;
 }

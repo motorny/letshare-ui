@@ -1,4 +1,12 @@
 {
+  "home_page": {
+    "RU": "Разработка ПО",
+    "EN": "Software development"
+  },
+  "notfound_page": {
+    "RU": "Не найдено",
+    "EN": "Not found"
+  },
   "navs": [
     {
       "linkName": {
@@ -10,21 +18,21 @@
     {
       "linkName": {
         "RU": "Решения",
-        "EN": "What we do"
+        "EN": "Solutions"
       },
       "link": "#solutions"
     },
     {
       "linkName": {
         "RU": "Экспертиза",
-        "EN": "About us"
+        "EN": "Expertise"
       },
       "link": "#expertise"
     },
     {
       "linkName": {
         "RU": "IT Сообщество",
-        "EN": "Career"
+        "EN": "IT Community"
       },
       "link": "#community"
     },

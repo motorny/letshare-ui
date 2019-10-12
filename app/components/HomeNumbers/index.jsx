@@ -1,12 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import AnimatedNumber from 'react-animated-number';
+import PropTypes from 'prop-types';
 
-import {getLocale} from "../../cookieManager";
+import { getLocale } from "../../cookieManager";
 
 import './index.css';
-
-import homeNumbers from '../../mockups/home-numbers.json';
 
 class HomeNumbers extends React.Component {
     constructor(props) {
@@ -43,37 +42,42 @@ class HomeNumbers extends React.Component {
     render() {
         const locale = getLocale();
         return (
-            <Container fluid>
-                <Row noGutters className="home-numbers__top">
-                    <Col>
-                        <p className="home-numbers__title">
-                            {homeNumbers.title[locale]}
-                        </p>
-                        <p className="home-numbers__description">
-                            {homeNumbers.description[locale]}
-                        </p>
-                    </Col>
-                </Row>
-                <Row>
-                    {homeNumbers.numbers.map((el, index) => {
-                        const colClass = "home-numbers__number_col home-numbers__number_col_" + index.toString();
-                        return (
-                            <Col xs="12" md="6" className={colClass} key={el.text[locale]}>
-                                <div className="home-numbers__number" ref={div => this.toggle[index] = div}>
-                                    <AnimatedNumber component="span" value={el.number}
-                                                    duration={1200}
-                                                    stepPrecision={0}
-                                                    key={this.state.isPrinted}
-                                                    className="home-numbers__number_title"/>
-                                    <div className="home-numbers__number_text">{el.text[locale]}</div>
-                                </div>
-                            </Col>
-                        )
-                    })}
-                </Row>
-            </Container>
+          <Container fluid>
+              <Row noGutters className="home-numbers__top">
+                  <Col>
+                      <p className="home-numbers__title">
+                          {this.props.content.title[locale]}
+                      </p>
+                      <p className="home-numbers__description">
+                          {this.props.content.description[locale]}
+                      </p>
+                  </Col>
+              </Row>
+              <Row>
+                  {this.props.statistics.map((el, index) => {
+                      const colClass = "home-numbers__number_col home-numbers__number_col_" + index.toString();
+                      return (
+                        <Col xs="12" md="6" className={colClass} key={index}>
+                            <div className="home-numbers__number" ref={div => this.toggle[index] = div}>
+                                <AnimatedNumber
+                                  component="span" value={el.amount}
+                                  duration={1200}
+                                  stepPrecision={0}
+                                  key={this.state.isPrinted}
+                                  className="home-numbers__number_title"/>
+                                <div className="home-numbers__number_text">{el[locale]}</div>
+                            </div>
+                        </Col>
+                      )
+                  })}
+              </Row>
+          </Container>
         );
     }
 }
+HomeNumbers.propTypes = {
+    content: PropTypes.object,
+    statistics: PropTypes.array
+};
 
 export default HomeNumbers;
