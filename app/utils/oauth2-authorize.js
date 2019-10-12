@@ -81,8 +81,6 @@ function getTokenRequest(tokenUrl, options, onAuth, onError) {
 }
 
 export default function authorize(login, password, onAuth, onError) {
-  for (let i = 0; i < 1000000; ++i) {}
-
   const query = [];
   const redirectUrl = window.location.origin + urls.auth.oauth2RedirectUrl;
   const state = btoa(new Date());
