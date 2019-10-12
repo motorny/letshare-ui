@@ -1,6 +1,7 @@
 import React from 'react';
 
 import HomePage from '../containers/HomePage/Loadable';
+import LoginPage from '../containers/LoginPage/Loadable';
 import NotFoundPage from '../containers/NotFoundPage/Loadable';
 
 class Route {
@@ -19,6 +20,14 @@ const HomeRoute = (() => {
   return r;
 })();
 
+const LoginRoute = (() => {
+  const r = new Route();
+  r.path = '/login';
+  r.exact = false;
+  r.component = LoginPage;
+  return r;
+})();
+
 const NotFoundRoute = (() => {
   const r = new Route();
   r.path = '';
@@ -27,6 +36,6 @@ const NotFoundRoute = (() => {
   return r;
 })();
 
-const routes = [HomeRoute, NotFoundRoute];
+const routes = [HomeRoute, LoginRoute, NotFoundRoute];
 
 export default routes;
