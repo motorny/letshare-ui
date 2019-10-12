@@ -16,7 +16,7 @@ export const requestDataUrl = `${serverUrl}/graphql`;
 
 export const CAPTCHA_KEY = '6LfH7KsUAAAAAE9bCsjxT03vsKFuEmNwytHjyTsX';
 
-export const server = 'http://localhost:4200/';
+export const server = 'http://185.91.53.50:5000/';
 
 export const urls = {
   auth: {
@@ -30,6 +30,6 @@ export const urls = {
 };
 
 export const auth_config = {
-  client_id: 'V0XVzw07BSpSIwGQOuhASxFo',
+  client_id: 'LkfJ5OXGbaCxBRzzrJhcS9xh',
   scopes: ['user'],
 };

@@ -76,7 +76,10 @@ function getTokenRequest(tokenUrl, options, onAuth, onError) {
       onAuth(resp);
     })
     .catch(err => {
-      onError(err.message);
+      if (err.response)
+        err.response.json().then(resp => onError(resp.error));
+      else
+        onError(err.message);
     });
 }
 
@@ -100,14 +103,14 @@ export default function authorize(login, password, onAuth, onError) {
     urls.auth.authorization_url.indexOf('?') === -1 ? '?' : '&',
   );
   const body = {
-    login,
+    username: login,
     password,
   };
   const options = {
     method: 'POST',
     headers: {
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': 'application/x-www-form-urlencoded',
+      Accept: 'application/json',
+      'Content-Type': 'application/json, application/x-www-form-urlencoded',
     },
     body: JSON.stringify(body),
   };
@@ -116,6 +119,9 @@ export default function authorize(login, password, onAuth, onError) {
       getToken(state, resp.uri, redirectUrl, onAuth, onError);
     })
     .catch(err => {
-      onError(err.message);
+      if (err.response)
+        err.response.json().then(resp => onError(resp.error));
+      else
+        onError(err.message);
     });
 }

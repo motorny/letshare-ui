@@ -226,4 +226,9 @@
   font-weight: bold;
 }
 
+.login-page__button.link {
+  padding: 10px 30px;
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=index.css.map */

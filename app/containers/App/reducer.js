@@ -12,7 +12,7 @@ import { GET_USER_DATA_SUCCESS, GET_USER_DATA_ERROR } from './constants';
 
 export const initialState = fromJS({
   userData: {
-    login: '',
+    username: '',
   },
   error: false,
 });
