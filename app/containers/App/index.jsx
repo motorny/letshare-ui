@@ -27,7 +27,7 @@ export default class App extends React.Component {
         <a id="top"/>
         <div className="app__theme">
           <ScrollToTop>
-            <Helmet titleTemplate="ITS | %s" defaultTitle="ITS | Разработка ПО">
+            <Helmet titleTemplate="LS | %s" defaultTitle="ITS | Разработка ПО">
               <meta name="description" content="A SITE application"/>
             </Helmet>
             <Header/>

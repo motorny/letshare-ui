@@ -9,27 +9,7 @@ import LocaleToggle from '../../containers/LocaleToggle';
 const Popup = (props) => {
   return(
     <Container>
-      {props.navs.map(el => (
-        <NavItem className="header__popup_nav-item" key={el.linkName[props.locale]}>
-          {window.location.pathname === '/'
-            ?
-            <AnchorLink
-              offset={() => 90}
-              className="header__popup_link header__text_font"
-              onClick={props.toggle}
-              href={el.link}>
-              {el.linkName[props.locale]}
-            </AnchorLink>
-            :
-            <NavLink
-              className="header__popup_link header__text_font"
-              onClick={props.toggle}
-              to={'/' + el.link}>
-              {el.linkName[props.locale]}
-            </NavLink>
-          }
-        </NavItem>
-      ))}
+
       <NavItem className="header__popup_nav-item">
         <span className="header__popup_toggle header__text_font">
           <LocaleToggle mobile={true}/>

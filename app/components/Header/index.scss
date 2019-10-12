@@ -39,6 +39,7 @@ $change-width: 1199px;
 
 .header__collapse {
   display: flex;
+  justify-content: space-between;
   flex-grow: 1;
 
   @media screen and (max-width: $change-width) {
@@ -50,6 +51,12 @@ $change-width: 1199px;
   @media screen and (min-width: $change-width) {
     display: none;
   }
+}
+
+.header__right-side {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .header__right {
@@ -89,13 +96,8 @@ $change-width: 1199px;
 
 .header__icon {
   vertical-align: middle;
+  font-size: 30px;
   color: $corporate-color;
-}
-.header__icon_mail {
-  font-size: 33px;
-}
-.header__icon_phone {
-  font-size: 26px;
 }
 
 .header__text_color {
@@ -159,3 +161,4 @@ $change-width: 1199px;
   font-size: 20px;
   height: 46px !important;
 }
+

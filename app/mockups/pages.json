@@ -1,11 +1,15 @@
 {
   "home_page": {
-    "RU": "Разработка ПО",
-    "EN": "Software development"
+    "RU": "Поиск",
+    "EN": "Search"
   },
-  "notfound_page": {
-    "RU": "Не найдено",
-    "EN": "Not found"
+  "items_page": {
+    "RU": "Каталог",
+    "EN": "Item list"
+  },
+  "requests_page": {
+    "RU": "Запросы",
+    "EN": "Requests"
   },
   "login_page": {
     "RU": "Вход",
@@ -15,41 +19,8 @@
     "RU": "Регистрация",
     "EN": "Sign up"
   },
-  "navs": [
-    {
-      "linkName": {
-        "RU": "Главная",
-        "EN": "Home"
-      },
-      "link": "#top"
-    },
-    {
-      "linkName": {
-        "RU": "Решения",
-        "EN": "Solutions"
-      },
-      "link": "#solutions"
-    },
-    {
-      "linkName": {
-        "RU": "Экспертиза",
-        "EN": "Expertise"
-      },
-      "link": "#expertise"
-    },
-    {
-      "linkName": {
-        "RU": "IT Сообщество",
-        "EN": "IT Community"
-      },
-      "link": "#community"
-    },
-    {
-      "linkName": {
-        "RU": "Контакты",
-        "EN": "Contacts"
-      },
-      "link": "#contacts"
-    }
-  ]
+  "notfound_page": {
+    "RU": "Не найдено",
+    "EN": "Not found"
+  }
 }

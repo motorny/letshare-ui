@@ -1,0 +1,37 @@
+@import "../../global-styles/global-params";
+
+.search-field {
+  width: 70%;
+}
+
+.search-field__input_wrap {
+  width: 100%;
+  margin-left: 20px;
+  height: 60px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  display: flex;
+}
+
+.search-field__input {
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: $font-family_common;
+  font-size: 15px;
+}
+
+.search-field__icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: $corporate-color;
+}
+
+.search-field__button {
+  padding: 5px 20px 5px 5px;
+}
+
+.search-field__input:focus, .search-field__button:focus {
+  border: none;
+  outline: none;
+}
