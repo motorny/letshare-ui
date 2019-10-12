@@ -46,7 +46,6 @@ export function getToken(state, uri, redirectUrl, onAuth, onError) {
   if (qp.code) {
     const form = {
       redirect_uri: redirectUrl,
-      code: qp.code,
       grant_type: "authorization_code",
       client_id: auth_config.client_id,
     };
@@ -56,6 +55,7 @@ export function getToken(state, uri, redirectUrl, onAuth, onError) {
         Accept: 'application/json, text/plain, */*',
         'Content-Type': 'application/x-www-form-urlencoded',
       },
+      body: `code=${qp.code}`,
     };
     const url = [urls.auth.access_token_url, buildFormData(form)].join(
       urls.auth.access_token_url.indexOf('?') === -1 ? '?' : '&',
