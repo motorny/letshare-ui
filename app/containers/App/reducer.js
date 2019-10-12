@@ -18,11 +18,15 @@ export const initialState = fromJS({
 });
 
 function userReducer(state = initialState, action) {
+  let error;
   switch (action.type) {
     case GET_USER_DATA_SUCCESS:
-      return state.set('userData', action.data);
+      return state.set('userData', action.data).set('error', false);
     case GET_USER_DATA_ERROR:
-      return state.set('error', action.error);
+      error = "Something went wrong";
+      if (action.error !== "Failed to fetch")
+        error = action.error;
+      return state.set('error', error);
     default:
       return state;
   }
