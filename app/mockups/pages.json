@@ -11,6 +11,10 @@
     "RU": "Вход",
     "EN": "Login"
   },
+  "register_page": {
+    "RU": "Регистрация",
+    "EN": "Sign up"
+  },
   "navs": [
     {
       "linkName": {

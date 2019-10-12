@@ -1,7 +1,7 @@
 /*
- * LoginPage
+ * RegisterPage
  *
- * This is the page fot log in
+ * This is the page fot sign up
  */
 
 import React from 'react';
@@ -11,7 +11,7 @@ import { Container, Row, Col } from "reactstrap";
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import { userDataGettingError, userDataGot } from '../App/actions';
 import { makeSelectError } from '../App/selectors';
@@ -21,18 +21,18 @@ import { getLocale } from '../../cookieManager';
 import authorize from '../../utils/oauth2-authorize';
 
 import pages from '../../mockups/pages.json';
-import content from '../../mockups/login.json';
+import content from '../../mockups/signup.json';
 
 import './index.css'
 
 const Modal = ({locale}) => (
   <RemoveScroll>
     <div
-      className="fadeInUp login-page__modal"
+      className="fadeInUp register-page__modal"
       onClick={event => event.preventDefault()}
     />
-    <div className="login-page__modal_text_wrap">
-      <div className="login-page__modal_text">
+    <div className="register-page__modal_text_wrap">
+      <div className="register-page__modal_text">
         {content.authorization[locale]}
       </div>
       <LoadingIndicator style={{margin: '0 auto'}}/>
@@ -40,18 +40,14 @@ const Modal = ({locale}) => (
   </RemoveScroll>
 );
 
-export class LoginPage extends React.Component {
+export class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
-    this.onLogin = this.onLogin.bind(this);
+    this.onSignup = this.onSignup.bind(this);
     this.onFailureLogin = this.onFailureLogin.bind(this);
     this.onSuccessLogin = this.onSuccessLogin.bind(this);
 
     this.state = { logining: false, redirect: false };
-  }
-
-  componentWillMount() {
-    this.props.onError(false);
   }
 
   onSuccessLogin(user) {
@@ -64,9 +60,9 @@ export class LoginPage extends React.Component {
     this.setState({ logining: false, redirect: false });
   }
 
-  onLogin(event) {
+  onSignup(event) {
     event.preventDefault();
-    let form = document.getElementById("login-form");
+    let form = document.getElementById("signup-form");
     const login = form.login.value;
     const password = form.password.value;
     this.setState({ logining: true, redirect: false });
@@ -82,44 +78,37 @@ export class LoginPage extends React.Component {
     return (
       <div>
         <Helmet>
-          <title>{pages.login_page[locale]}</title>
-          <meta name="description" content="LetShare login page"/>
+          <title>{pages.register_page[locale]}</title>
+          <meta name="description" content="LetShare sign up page"/>
         </Helmet>
-        <div className="login-page__img" />
-        <div className="login-page__text_wrap">
-          <Container className="login-page__container">
-            <Row className="login-page__row">
-              <Col xs="12" md="12" className="login-page__col">
-                <div className="login-page__col_title animated fadeInDownBig">
-                  <span className="login-page__col_title_text">
+        <div className="register-page__img" />
+        <div className="register-page__text_wrap">
+          <Container className="register-page__container">
+            <Row className="register-page__row">
+              <Col xs="12" md="12" className="register-page__col">
+                <div className="register-page__col_title animated fadeInDownBig">
+                  <span className="register-page__col_title_text">
                     {content.col_title[locale]}
                   </span>
                 </div>
-                <form onSubmit={this.onLogin} id="login-form" className="animated fadeInUpBig">
-                  <input className="login-page__input"
+                <form onSubmit={this.onSignup} id="signup-form" className="animated fadeInUpBig">
+                  <input className="register-page__input"
                          name="login"
                          type="text"
                          required
                          placeholder={content.input_login[locale]}/>
-                  <input className="login-page__input"
+                  <input className="register-page__input"
                          name="password"
                          type="password"
                          required
                          placeholder={content.input_password[locale]}/>
-                  <input className="login-page__button login-page__button_text"
+                  <input className="register-page__button login-page__button_text"
                          type="submit"
                          value={content.button_login[locale]}/>
                 </form>
-                <div className="login-page__button animated fadeInUpBig">
-                  <Link to="/signup" className="login-page__button link">
-                    <span className="login-page__button_text">
-                      {content.button_signup[locale]}
-                    </span>
-                  </Link>
-                </div>
                 {error && (
-                  <div className="login-page__col_title">
-                    <span className="login-page__col_title_text">
+                  <div className="register-page__col_title">
+                    <span className="register-page__col_title_text">
                       {error}
                     </span>
                   </div>
@@ -134,7 +123,7 @@ export class LoginPage extends React.Component {
   }
 }
 
-LoginPage.propTypes = {
+RegisterPage.propTypes = {
   error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   onAuth: PropTypes.func,
   onError: PropTypes.func,
@@ -156,4 +145,4 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-export default withConnect(LoginPage);
+export default withConnect(RegisterPage);

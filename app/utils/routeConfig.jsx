@@ -2,6 +2,7 @@ import React from 'react';
 
 import HomePage from '../containers/HomePage/Loadable';
 import LoginPage from '../containers/LoginPage/Loadable';
+import RegisterPage from '../containers/RegisterPage/Loadable';
 import NotFoundPage from '../containers/NotFoundPage/Loadable';
 
 class Route {
@@ -28,6 +29,14 @@ const LoginRoute = (() => {
   return r;
 })();
 
+const RegisterRoute = (() => {
+  const r = new Route();
+  r.path = '/signup';
+  r.exact = false;
+  r.component = RegisterPage;
+  return r;
+})();
+
 const NotFoundRoute = (() => {
   const r = new Route();
   r.path = '';
@@ -36,6 +45,6 @@ const NotFoundRoute = (() => {
   return r;
 })();
 
-const routes = [HomeRoute, LoginRoute, NotFoundRoute];
+const routes = [HomeRoute, LoginRoute, RegisterRoute, NotFoundRoute];
 
 export default routes;
