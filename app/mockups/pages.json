@@ -7,6 +7,10 @@
     "RU": "Не найдено",
     "EN": "Not found"
   },
+  "login_page": {
+    "RU": "Вход",
+    "EN": "Login"
+  },
   "navs": [
     {
       "linkName": {
