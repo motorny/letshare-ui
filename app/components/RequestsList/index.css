@@ -1,0 +1,23 @@
+.requests-list__title {
+  font-weight: 300;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 50px;
+}
+@media screen and (max-width: 1000px) {
+  .requests-list__title {
+    font-size: 30px;
+  }
+}
+
+.requests-list__request_type {
+  cursor: pointer;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  margin: 0 20px;
+  border-bottom: 1px #3f3f3f dashed;
+}
+
+.requests-list__request_type:hover {
+  color: #2a729c;
+  border-bottom: 1px #2a729c dashed;
+}

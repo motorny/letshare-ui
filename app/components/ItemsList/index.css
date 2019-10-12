@@ -1,0 +1,10 @@
+.item-list__title {
+  font-weight: 300;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 50px;
+}
+@media screen and (max-width: 1000px) {
+  .item-list__title {
+    font-size: 30px;
+  }
+}
