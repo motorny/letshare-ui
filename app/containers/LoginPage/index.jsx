@@ -9,10 +9,12 @@ import { Helmet } from 'react-helmet';
 import { RemoveScroll } from 'react-remove-scroll';
 import { Container, Row, Col } from "reactstrap";
 import PropTypes from 'prop-types';
+import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { userDataGettingError, userDataGot } from '../App/actions';
+import { makeSelectError } from '../App/selectors';
 
 import LoadingIndicator from '../../components/LoadingIndicator';
 import { getLocale } from '../../cookieManager';
@@ -70,6 +72,7 @@ export class LoginPage extends React.Component {
   render() {
     const locale = getLocale();
     const { logining, redirect } = this.state;
+    const { error } = this.props;
     if (redirect)
       return <Redirect to="/" />;
     return (
@@ -103,6 +106,13 @@ export class LoginPage extends React.Component {
                          type="submit"
                          value={content.button_login[locale]}/>
                 </form>
+                {error && (
+                  <div className="login-page__col_title">
+                    <span className="login-page__col_title_text">
+                      {error}
+                    </span>
+                  </div>
+                )}
               </Col>
             </Row>
           </Container>
@@ -114,9 +124,14 @@ export class LoginPage extends React.Component {
 }
 
 LoginPage.propTypes = {
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   onAuth: PropTypes.func,
   onError: PropTypes.func,
 };
+
+const mapStateToProps = createStructuredSelector({
+  error: makeSelectError(),
+});
 
 export function mapDispatchToProps(dispatch) {
   return {
@@ -126,7 +141,7 @@ export function mapDispatchToProps(dispatch) {
 }
 
 const withConnect = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 );
 
