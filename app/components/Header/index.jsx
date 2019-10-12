@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { HashLink as Link, NavHashLink as NavLink } from 'react-router-hash-link';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -9,6 +9,7 @@ import {
     NavItem,
 } from 'reactstrap';
 import styled from 'styled-components';
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 import LocaleToggle from '../../containers/LocaleToggle';
 import NavToggler from '../NavToggler';
@@ -29,6 +30,7 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
+        this.toggle_dropDown = this.toggle_dropDown.bind(this);
         this.checkPopup = this.checkPopup.bind(this);
         this.listenScrollEvent = this.listenScrollEvent.bind(this);
 
@@ -36,6 +38,7 @@ class Header extends React.Component {
         this.state = {
             isScrolled: isScrolled,
             isOpen: false,
+            dropDown: false
         }
     };
 
@@ -69,6 +72,12 @@ class Header extends React.Component {
         }
     };
 
+    toggle_dropDown() {
+        this.setState({
+            dropDown: !this.state.dropDown
+        })
+    }
+
     render() {
         const locale = getLocale();
         const headerNavClass = this.state.isScrolled
@@ -90,6 +99,17 @@ class Header extends React.Component {
                                     <i className="fas fa-bell header__icon"/>
                                 </Link>
                             </div>
+
+                            <ButtonDropdown isOpen={this.state.dropDown} toggle={this.toggle_dropDown}>
+                                <DropdownToggle caret>
+                                    <img className="header__user_logo" src="http://ankom.ru/wp-content/uploads/Kabel-HDMI-HDMI-5m..jpg" alt="logo"/>
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                    <DropdownItem>Мои вещи</DropdownItem>
+                                    <DropdownItem>Профиль</DropdownItem>
+                                    <DropdownItem>Выйти</DropdownItem>
+                                </DropdownMenu>
+                            </ButtonDropdown>
 
                             {/*<LocaleToggle mobile={false}/>*/}
                         </div>

@@ -1,12 +1,12 @@
 @import "../../global-styles/global-params";
 
 .search-field {
-  width: 70%;
+  margin: 0 20px;
+  width: 100%;
 }
 
 .search-field__input_wrap {
   width: 100%;
-  margin-left: 20px;
   height: 60px;
   border: 1px solid #e3e3e3;
   border-radius: 10px;

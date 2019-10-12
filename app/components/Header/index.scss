@@ -91,7 +91,9 @@ $change-width: 1199px;
 }
 
 .header__icon_wrap {
-  margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
 }
 
 .header__icon {
@@ -161,4 +163,18 @@ $change-width: 1199px;
   font-size: 20px;
   height: 46px !important;
 }
+
+.header__user_logo {
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.header .btn-secondary {
+  background-color: transparent !important;
+  border: none !important;
+  color: #3f3f3f !important;
+  box-shadow: none !important;
+}
+
 

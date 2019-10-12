@@ -50,7 +50,7 @@ const Item = (props) => {
                 </div>
             </div>
             <div className="item__contact">
-                <Button response={String(props.response)} className="item__button_wrap">
+                <Button response={String(props.status)} className="item__button_wrap">
                   <span className="item__button">
                     Взять
                   </span>
@@ -66,7 +66,7 @@ Item.propTypes = {
     owner: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     creation_time: PropTypes.number.isRequired,
-    response: PropTypes.number.isRequired
+    status: PropTypes.number.isRequired
 };
 
 export default Item;

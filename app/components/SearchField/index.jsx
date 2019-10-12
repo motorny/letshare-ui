@@ -62,11 +62,13 @@ class SearchField extends Component {
                             name="search"
                             type="text"
                             placeholder="Введите запрос..."/>
-                        <Link to='/products'>
+
                             <button type="submit" className="search-field__button">
+                                <Link to='/products'>
                                 <i className="fas fa-search search-field__icon"/>
+                                </Link>
                             </button>
-                        </Link>
+
                     </div>
                     {/* onChange={this.handleInputChange}/> */}
                 </form>

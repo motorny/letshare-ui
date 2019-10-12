@@ -9,7 +9,7 @@
         "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ligula metus, eget vehicula purus aliquet nec. Nullam vel suscipit ante. Ut et congue turpis.",
         "creation_time": 1570903531,
-        "response": 0
+        "status": 0
       },
       "user": {
         "name": "Илья",
@@ -23,7 +23,7 @@
         "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum ligula metus, eget vehicula purus aliquet nec. Nullam vel suscipit ante. Ut et congue turpis.",
         "creation_time": 1570903531,
-        "response": 1
+        "status": 1
       },
       "user": {
         "name": "Илья",

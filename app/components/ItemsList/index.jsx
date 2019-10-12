@@ -19,7 +19,7 @@ const ItemsList = (props) => {
                     <hr/>
                     <Item name={el.item.name} img_url={el.item.img_url} descriptiion={el.item.description}
                           owner={el.user.name} location={el.user.location} creation_time={el.item.creation_time}
-                          response={el.item.response}/>
+                          status={el.item.status}/>
                 </div>
             ))}
             <hr/>
