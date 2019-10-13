@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 import './index.css';
 import { HashLink as Link } from 'react-router-hash-link';
+import { withRouter } from 'react-router-dom';
 
 class SearchField extends Component {
     constructor(props) {
         super(props);
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.filterArray = this.filterArray.bind(this);
         this.state = {
@@ -52,10 +54,15 @@ class SearchField extends Component {
         this.getData();
     }
 
+    onSubmit(event) {
+        event.preventDefault();
+        this.props.history.push(`/items?search=${event.target.search.value}`);
+    }
+
     render() {
         return (
             <div className="search-field">
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <div className="search-field__input_wrap">
                         <input
                             className="search-field__input"
@@ -64,9 +71,7 @@ class SearchField extends Component {
                             placeholder="Введите запрос..."/>
 
                             <button type="submit" className="search-field__button">
-                                <Link to='/items'>
                                 <i className="fas fa-search search-field__icon"/>
-                                </Link>
                             </button>
 
                     </div>
@@ -84,4 +89,4 @@ class SearchField extends Component {
     }
 }
 
-export default SearchField;
+export default withRouter(SearchField);
