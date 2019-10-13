@@ -14,7 +14,7 @@ import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reac
 import LocaleToggle from '../../containers/LocaleToggle';
 import NavToggler from '../NavToggler';
 import Popup from './popup';
-import { getLocale } from "../../cookieManager";
+import { getLocale, getUser } from "../../cookieManager";
 
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -80,6 +80,7 @@ class Header extends React.Component {
 
     render() {
         const locale = getLocale();
+        const user = getUser();
         const headerNavClass = this.state.isScrolled
             ? "header__navbar header__scroll header__text_font"
             : "header__navbar header__text_font";
@@ -88,10 +89,15 @@ class Header extends React.Component {
             <div className="header">
                 <Navbar className={headerNavClass} expand="xl">
                     <Link to='/#top' className="header__logo_link">
-                        <img src="/logo.svg" alt="SITE - Logo" className="header__img"/>
+                        <img src="/logo.png" alt="SITE - Logo" className="header__img"/>
                     </Link>
                     <div className="header__collapse">
-                        <SearchField/>
+                        {window.location.pathname !== '/'
+                            ?
+                            <SearchField/>
+                            :
+                            <div/>
+                        }
                         <div className="header__right-side">
 
                             <div className="header__icon_wrap">
@@ -102,9 +108,11 @@ class Header extends React.Component {
 
                             <ButtonDropdown isOpen={this.state.dropDown} toggle={this.toggle_dropDown}>
                                 <DropdownToggle caret>
-                                    <img className="header__user_logo" src="http://ankom.ru/wp-content/uploads/Kabel-HDMI-HDMI-5m..jpg" alt="logo"/>
+                                    <img className="header__user_logo" src={user.photo_url} alt="logo"/>
                                 </DropdownToggle>
                                 <DropdownMenu>
+                                    <DropdownItem disabled>{user.username}</DropdownItem>
+                                    <DropdownItem disabled><span>Баллов: </span>{user.points}</DropdownItem>
                                     <DropdownItem>Мои вещи</DropdownItem>
                                     <DropdownItem>Профиль</DropdownItem>
                                     <DropdownItem>Выйти</DropdownItem>

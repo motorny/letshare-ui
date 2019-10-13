@@ -16,7 +16,7 @@ export const initialState = fromJS({
   data: false,
 });
 
-function mainReducer(state = initialState, action) {
+function itemsReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_MAIN:
       return state
@@ -32,4 +32,4 @@ function mainReducer(state = initialState, action) {
   }
 }
 
-export default mainReducer;
+export default itemsReducer;

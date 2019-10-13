@@ -27,7 +27,7 @@ import 'file-loader?name=[name].[ext]!./.htaccess'; // eslint-disable-line impor
 
 // Load the images
 import '!file-loader?name=[name].[ext]!../public/favicon.ico';
-import '!file-loader?name=[name].[ext]!./images/logo.svg';
+import '!file-loader?name=[name].[ext]!./images/logo.png';
 import '!file-loader?name=[name].[ext]!./images/photo.png';
 
 // Load the fonts
