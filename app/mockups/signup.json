@@ -1,26 +1,10 @@
 {
-  "input_login": {
-    "RU": "Логин",
-    "EN": "Login"
-  },
-  "input_password": {
-    "RU": "Пароль",
-    "EN": "Password"
-  },
-  "button_login": {
-    "RU": "Войти",
-    "EN": "Login"
-  },
-  "button_signup": {
-    "RU": "Зарегистрироваться",
-    "EN": "Sign up"
-  },
   "col_title": {
-    "RU": "Вход",
-    "EN": "Login"
+    "RU": "Регистрация",
+    "EN": "Registration"
   },
-  "authorization": {
-    "RU": "Идёт авторизация. Пожалуйста, подождите.",
-    "EN": "Authorization. Please wait."
+  "registration": {
+    "RU": "Идёт регистрация. Пожалуйста, подождите.",
+    "EN": "Registration. Please wait."
   }
 }
