@@ -14,7 +14,7 @@ import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reac
 import LocaleToggle from '../../containers/LocaleToggle';
 import NavToggler from '../NavToggler';
 import Popup from './popup';
-import { getLogined, getLocale, getUser } from '../../cookieManager';
+import { getLogined, getLocale, getSession, getUser } from '../../cookieManager';
 
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -122,12 +122,16 @@ class Header extends React.Component {
                                 <DropdownMenu>
                                     <DropdownItem disabled>{user.username}</DropdownItem>
                                     <DropdownItem disabled><span>Баллов: </span>{user.points}</DropdownItem>
-                                    <DropdownItem>
-                                        <Link className="header__link_dropdown" to='/user_items'>
-                                            Мои вещи
-                                        </Link>
+                                    <DropdownItem onClick={() => {
+                                        this.props.history.push(`/user_items`);
+                                    }}>
+                                      Мои вещи
                                     </DropdownItem>
-                                    <DropdownItem>Профиль</DropdownItem>
+                                    <DropdownItem onClick={() => {
+                                      this.props.history.push(`/profile`);
+                                    }}>
+                                      Профиль
+                                    </DropdownItem>
                                     <DropdownItem onClick={() => {
                                       const options = {
                                         method: 'POST',
