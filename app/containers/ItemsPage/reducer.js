@@ -14,15 +14,21 @@ export const initialState = fromJS({
   loading: false,
   error: false,
   data: false,
+  search: '',
 });
 
 function itemsReducer(state = initialState, action) {
+  let search;
   switch (action.type) {
     case LOAD_MAIN:
+      search = action.search;
+      if (search === undefined)
+        search = '';
       return state
         .set('loading', true)
         .set('error', false)
-        .set('data', false);
+        .set('data', false)
+        .set('search', search);
     case LOAD_MAIN_SUCCESS:
       return state.set('loading', false).set('data', action.main);
     case LOAD_MAIN_ERROR:

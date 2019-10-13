@@ -31,6 +31,9 @@ export const urls = {
     get: uid => `${server}profile/${uid}`,
     update: uid => `${server}profile/${uid}`,
   },
+  items: {
+    get: `${server}item/`,
+  }
 };
 
 export const auth_config = {

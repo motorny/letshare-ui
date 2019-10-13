@@ -112,7 +112,6 @@ export class ItemsList extends React.Component {
     }
 
     render() {
-        console.log(this.state.itemInfo);
         const locale = getLocale();
         let form;
         if (this.state.formOpen) {

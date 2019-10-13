@@ -14,12 +14,14 @@ import { LOAD_MAIN, LOAD_MAIN_SUCCESS, LOAD_MAIN_ERROR } from './constants';
 /**
  * Load main data, this action starts the request saga
  *
+ * @param  {string} search The search string
  *
- * @return {object} An action object with a type of LOAD_MAIN passing the eid
+ * @return {object} An action object with a type of LOAD_MAIN passing the search string
  */
-export function loadContent() {
+export function loadContent(search) {
   return {
     type: LOAD_MAIN,
+    search,
   };
 }
 

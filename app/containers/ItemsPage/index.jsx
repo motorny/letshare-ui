@@ -15,7 +15,7 @@ import { loadContent } from './actions';
 import {
   makeSelectData,
   makeSelectError,
-  makeSelectLoading,
+  makeSelectLoading, makeSelectSearch,
 } from './selectors';
 import injectReducer from '../../utils/injectReducer';
 import injectSaga from '../../utils/injectSaga';
@@ -24,6 +24,8 @@ import saga from './saga';
 
 import pages from '../../mockups/pages.json';
 import { withRequest } from '../../utils/auth';
+import { withRouter } from 'react-router-dom';
+import { parseQueryString } from '../../utils/utils';
 
 const HeaderDiv = styled.div`
     height: 120px;
@@ -32,9 +34,21 @@ const HeaderDiv = styled.div`
 
 export class ItemsPage extends React.Component {
     componentDidMount() {
-        if (!this.props.data && !this.props.error) {
-            this.props.init();
+      let search = this.props.location.search.substring(1);
+      search = parseQueryString(search).search;
+      console.log(this.props.search, search);
+        if ((!this.props.data || this.props.search !== search) && !this.props.error) {
+            this.props.init(search);
         }
+    }
+
+    componentDidUpdate() {
+      let search = this.props.location.search.substring(1);
+      search = parseQueryString(search).search;
+      console.log(this.props.search, search);
+      if (this.props.search !== search) {
+        this.props.init(search);
+      }
     }
 
     render() {
@@ -73,11 +87,12 @@ ItemsPage.propTypes = {
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   init: PropTypes.func,
+  search: PropTypes.string,
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
-    init: () => dispatch(loadContent()),
+    init: search => dispatch(loadContent(search)),
   };
 }
 
@@ -85,6 +100,7 @@ const mapStateToProps = createStructuredSelector({
   loading: makeSelectLoading(),
   error: makeSelectError(),
   data: makeSelectData(),
+  search: makeSelectSearch(),
 });
 
 const withConnect = connect(
@@ -97,6 +113,7 @@ const withSaga = injectSaga({ key: 'itemsId', saga });
 
 export default compose(
   withRequest,
+  withRouter,
   withReducer,
   withSaga,
   withConnect,

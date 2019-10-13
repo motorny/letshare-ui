@@ -16,4 +16,7 @@ const makeSelectError = () =>
 const makeSelectData = () =>
   createSelector(selectFeed, mainState => mainState.get('data'));
 
-export { selectFeed, makeSelectLoading, makeSelectError, makeSelectData };
+const makeSelectSearch = () =>
+  createSelector(selectFeed, mainState => mainState.get('search'));
+
+export { selectFeed, makeSelectLoading, makeSelectError, makeSelectData, makeSelectSearch };
