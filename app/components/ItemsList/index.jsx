@@ -60,7 +60,7 @@ export class ItemsList extends React.Component {
                 Accept: 'application/json',
             },
             body: JSON.stringify(body),
-        }) .then(res => {this.props.update(); this.toggle(false)}).catch(err => ({ err }));
+        }) .then(res => {this.props.update(''); this.toggle(false)}).catch(err => ({ err }));
     }
 
     editItem(evt) {
@@ -80,7 +80,7 @@ export class ItemsList extends React.Component {
                 Accept: 'application/json',
             },
             body: JSON.stringify(body),
-        }) .then(res => {this.props.update(); this.toggle(false);}).catch(err => ({ err }));
+        }) .then(res => {this.props.update(''); this.toggle(false);}).catch(err => ({ err }));
     }
 
     deleteItem(itemInfo) {
@@ -95,7 +95,7 @@ export class ItemsList extends React.Component {
                 Accept: 'application/json',
             },
             body: JSON.stringify(body),
-        }) .then(res => {this.props.update();}).catch(err => ({ err }));
+        }) .then(res => {this.props.update('');}).catch(err => ({ err }));
     }
 
     makeRequest(id) {
@@ -109,7 +109,7 @@ export class ItemsList extends React.Component {
                 Accept: 'application/json',
             },
             body: JSON.stringify(body),
-        }) .then(res => {this.props.update();}).catch(err => ({ err }));
+        }).then(res => {this.props.update('');}).catch(err => ({ err }));
     }
 
     render() {
