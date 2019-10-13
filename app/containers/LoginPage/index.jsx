@@ -118,7 +118,7 @@ export class LoginPage extends React.Component {
                   </Link>
                 </div>
                 {error && (
-                  <div className="login-page__col_title">
+                  <div className="login-page__error">
                     <span className="login-page__col_title_text">
                       {error}
                     </span>

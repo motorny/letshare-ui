@@ -161,7 +161,6 @@ $mobile-width: 813px;
   }
 }
 
-
 .login-page__input {
   margin-bottom: 15px;
   height: 50px;
@@ -209,4 +208,8 @@ $mobile-width: 813px;
 .login-page__button.link {
   padding: 10px 30px;
   text-decoration: none;
+}
+
+.login-page__error {
+  text-align: center;
 }
