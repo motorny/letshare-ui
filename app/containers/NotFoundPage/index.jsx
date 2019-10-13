@@ -12,6 +12,7 @@ import {getLocale} from "../../cookieManager";
 
 import not_found from '../../mockups/not-found.json'
 import pages from '../../mockups/pages.json'
+import { withRequest } from '../../utils/auth';
 
 import './index.css'
 
@@ -33,4 +34,4 @@ export function NotFound() {
     );
 }
 
-export default NotFound;
+export default withRequest(NotFound);

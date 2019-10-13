@@ -23,6 +23,7 @@ import reducer from './reducer';
 import saga from './saga';
 
 import pages from '../../mockups/pages.json';
+import { withRequest } from '../../utils/auth';
 
 const HeaderDiv = styled.div`
     height: 120px;
@@ -95,6 +96,7 @@ const withReducer = injectReducer({ key: 'itemsId', reducer });
 const withSaga = injectSaga({ key: 'itemsId', saga });
 
 export default compose(
+  withRequest,
   withReducer,
   withSaga,
   withConnect,
