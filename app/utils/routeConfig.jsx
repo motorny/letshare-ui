@@ -3,6 +3,7 @@ import React from 'react';
 import HomePage from '../containers/HomePage/Loadable';
 import LoginPage from '../containers/LoginPage/Loadable';
 import RegisterPage from '../containers/RegisterPage/Loadable';
+import ProfilePage from '../containers/ProfilePage/Loadable';
 import ItemsPage from '../containers/ItemsPage/Loadable';
 import RequestsPage from '../containers/RequestsPage/Loadable';
 import NotFoundPage from '../containers/NotFoundPage/Loadable';
@@ -39,6 +40,15 @@ const RegisterRoute = (() => {
   return r;
 })();
 
+const ProfileRoute = (() => {
+  const r = new Route();
+  r.path = '/profile';
+  r.exact = false;
+  r.component = ProfilePage;
+  return r;
+})();
+
+
 const ItemsRoute = (() => {
   const r = new Route();
   r.path = '/products';
@@ -63,6 +73,6 @@ const NotFoundRoute = (() => {
   return r;
 })();
 
-const routes = [HomeRoute, LoginRoute, RegisterRoute, ItemsRoute, RequestsRoute, NotFoundRoute];
+const routes = [HomeRoute, LoginRoute, RegisterRoute, ProfileRoute, ItemsRoute, RequestsRoute, NotFoundRoute];
 
 export default routes;
