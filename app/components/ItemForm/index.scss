@@ -1,0 +1,45 @@
+@import "../../global-styles/global-params";
+
+.item-form__input {
+  margin-bottom: 15px;
+  height: 50px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: $font-family_common;
+  font-size: 13px;
+}
+
+.item-form__input:focus {
+  outline: none;
+}
+
+.item-form__input.hidden {
+  display: none;
+}
+
+.item-form__button {
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 0;
+  background-color: $corporate-color;
+  border-radius: 500px;
+  text-align: center;
+}
+
+.item-form__button:focus {
+  outline: none;
+}
+
+.item-form__button:hover {
+  background-color: #2B84AF;
+}
+
+.item-form__button_text {
+  color: #ffffff;
+  font-family: $font-family_common;
+  font-size: 15px;
+  font-weight: bold;
+}
