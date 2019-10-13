@@ -1,5 +1,7 @@
 import 'whatwg-fetch';
 
+export const BASE64_RE = /^data:image\/(png|jpg|jpeg);base64,/;
+
 export function getDataFromResp(resp) {
   const res = {};
   for (let i = 0; i < resp.length; i += 1) {
