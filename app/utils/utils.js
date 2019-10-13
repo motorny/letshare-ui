@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+import { rmSession, rmUser, setLogined } from '../cookieManager';
 
 export const BASE64_RE = /^data:image\/(png|jpg|jpeg);base64,/;
 
@@ -35,3 +36,9 @@ export const parseQueryString = str => {
     )
     : {};
 };
+
+export function logout() {
+  setLogined(false);
+  rmSession();
+  rmUser();
+}

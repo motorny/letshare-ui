@@ -14,13 +14,17 @@ import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reac
 import LocaleToggle from '../../containers/LocaleToggle';
 import NavToggler from '../NavToggler';
 import Popup from './popup';
-import { getLocale, getUser } from "../../cookieManager";
+import { getLogined, getLocale, getUser } from '../../cookieManager';
 
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 import constants from '../../mockups/constants.json';
 import SearchField from "../SearchField";
+
+import { logout } from '../../utils/utils';
+import { urls } from '../../utils/constants';
+import requestAuth from '../../utils/requestAuth';
 
 const ArrowToTop = styled.div`
     opacity: ${props => (props.isScrolled ? "1" : "0")}
@@ -88,7 +92,7 @@ class Header extends React.Component {
         const headerNavClass = this.state.isScrolled
             ? "header__navbar header__scroll header__text_font"
             : "header__navbar header__text_font";
-
+        const { pathname } = window.location;
         return (
             <div className="header">
                 <Navbar className={headerNavClass} expand="xl">
@@ -96,20 +100,21 @@ class Header extends React.Component {
                         <img src="/logo.png" alt="SITE - Logo" className="header__img"/>
                     </Link>
                     <div className="header__collapse">
-                        {window.location.pathname !== '/'
-                            ?
+                        {(pathname !== '/' && pathname !== '/login' && pathname !== '/signup') ?
                             <SearchField/>
-                            :
-                            <div/>
+                          :
+                          <div />
                         }
                         <div className="header__right-side">
-
+                          {getLogined() === 'true' && (
                             <div className="header__icon_wrap">
                                 <Link to='/requests'>
                                     <i className="fas fa-bell header__icon"/>
                                 </Link>
                             </div>
+                          )}
 
+                          {getLogined() === 'true' && (
                             <ButtonDropdown isOpen={this.state.dropDown} toggle={this.toggle_dropDown}>
                                 <DropdownToggle caret>
                                     <img className="header__user_logo" src={user.photo_url} alt="logo"/>
@@ -119,9 +124,22 @@ class Header extends React.Component {
                                     <DropdownItem disabled><span>Баллов: </span>{user.points}</DropdownItem>
                                     <DropdownItem>Мои вещи</DropdownItem>
                                     <DropdownItem>Профиль</DropdownItem>
-                                    <DropdownItem>Выйти</DropdownItem>
+                                    <DropdownItem onClick={() => {
+                                      const options = {
+                                        method: 'POST',
+                                        body: JSON.stringify({
+                                          access_token: getSession(),
+                                        }),
+                                      };
+                                      requestAuth(urls.auth.revoke_token_url, options);
+                                      logout();
+                                      this.props.history.push(`/login`);
+                                    }}>
+                                      Выйти
+                                    </DropdownItem>
                                 </DropdownMenu>
                             </ButtonDropdown>
+                          )}
 
                             {/*<LocaleToggle mobile={false}/>*/}
                         </div>
