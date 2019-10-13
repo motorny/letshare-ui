@@ -11,17 +11,18 @@ import { Container, Row, Col } from "reactstrap";
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { compose } from 'redux';
+import { withAuth } from '../../utils/auth';
 
 import { userDataGettingError, userDataGot } from '../App/actions';
 import { makeSelectError, makeSelectUserData } from '../App/selectors';
 
 import ProfileForm from '../../components/ProfileForm';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import { getLocale, setLogined, setSession, setUser } from '../../cookieManager';
+import { getLocale, setUser } from '../../cookieManager';
 import { BASE64_RE } from '../../utils/utils';
 import { urls } from '../../utils/constants';
-import request from '../../utils/request';
+import requestAuth from '../../utils/requestAuth';
 
 
 import pages from '../../mockups/pages.json';
@@ -90,7 +91,7 @@ export class ProfilePage extends React.Component {
       },
       body: JSON.stringify(data),
     };
-    request(urls.profile.update(user.id), options)
+    requestAuth(urls.profile.update(user.id), options)
       .then(resp => {
         fields.forEach(e => user[e] = resp[e]);
         user.photo_url = resp.photo_url;
@@ -169,4 +170,7 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-export default withConnect(ProfilePage);
+export default compose(
+  withAuth,
+  withConnect,
+)(ProfilePage);
