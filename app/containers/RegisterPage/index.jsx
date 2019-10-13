@@ -1,7 +1,7 @@
 /*
  * RegisterPage
  *
- * This is the page fot sign up
+ * This is the page for sign up
  */
 
 import React from 'react';

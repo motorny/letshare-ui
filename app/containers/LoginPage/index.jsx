@@ -1,7 +1,7 @@
 /*
  * LoginPage
  *
- * This is the page fot log in
+ * This is the page for log in
  */
 
 import React from 'react';
