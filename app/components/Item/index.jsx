@@ -17,8 +17,8 @@ const CURSOR_MAP = {
 };
 
 const Button = styled.div`
-    background-color: ${props => (COLOR_MAP[props.response])};
-    cursor: ${props => (CURSOR_MAP[props.response])}
+    background-color: ${props => (COLOR_MAP[props.status])};
+    cursor: ${props => (CURSOR_MAP[props.status])}
 `;
 
 const Item = (props) => {
@@ -50,7 +50,7 @@ const Item = (props) => {
                 </div>
             </div>
             <div className="item__contact">
-                <Button response={String(props.status)} className="item__button_wrap">
+                <Button status={props.status === 0 ? '0' : '1'} className="item__button_wrap">
                   <span className="item__button">
                     Взять
                   </span>

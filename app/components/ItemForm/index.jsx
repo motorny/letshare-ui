@@ -81,7 +81,7 @@ export class ItemForm extends React.Component {
                  placeholder={content.input_name[locale]}
                  onChange={evt => this.onChangeText(evt, 'name')}
                  value={this.state.name}
-                 maxLength={40} />
+                 maxLength={128} />
           <input className="item-form__input"
                  name="description"
                  type="text"
@@ -89,7 +89,7 @@ export class ItemForm extends React.Component {
                  placeholder={content.input_description[locale]}
                  onChange={evt => this.onChangeText(evt, 'description')}
                  value={this.state.description}
-                 maxLength={128} />
+                 maxLength={512} />
           <input className="item-form__button item-form__button_text"
                  type="submit"
                  value={content.button_submit[locale]}/>

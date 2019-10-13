@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 import LoadingIndicator from '../../components/LoadingIndicator';
 import TechProblem from '../../components/TechProblem';
-import RequestsList from "../../components/RequestsList";
+import ItemsList from "../../components/ItemsList";
 
 import { getLocale } from '../../cookieManager';
 import { loadContent } from './actions';
@@ -28,7 +28,7 @@ const HeaderDiv = styled.div`
     height: 120px;
 `;
 
-export class RequestsPage extends React.Component {
+export class UserItemsPage extends React.Component {
     componentDidMount() {
         if (!this.props.data && !this.props.error) {
             this.props.init();
@@ -38,7 +38,6 @@ export class RequestsPage extends React.Component {
     render() {
         const {loading, error, data} = this.props;
         const locale = getLocale();
-
         let content;
         if (error) {
             console.log(error);
@@ -48,7 +47,7 @@ export class RequestsPage extends React.Component {
             content =
                 <div>
                     <HeaderDiv/>
-                    <RequestsList requests_info={data}/>
+                    <ItemsList update={this.props.init} items_info={data} flag_search={false}/>
                 </div>
         }
         else {
@@ -67,7 +66,7 @@ export class RequestsPage extends React.Component {
     }
 }
 
-RequestsPage.propTypes = {
+UserItemsPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
@@ -91,11 +90,11 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-const withReducer = injectReducer({ key: 'requestsId', reducer });
-const withSaga = injectSaga({ key: 'requestsId', saga });
+const withReducer = injectReducer({ key: 'user-itemsId', reducer });
+const withSaga = injectSaga({ key: 'user-itemsId', saga });
 
 export default compose(
   withReducer,
   withSaga,
   withConnect,
-)(RequestsPage);
+)(UserItemsPage);

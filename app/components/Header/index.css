@@ -78,6 +78,14 @@
   border-bottom: #2a729c 2px solid;
 }
 
+.header__link_dropdown, .header__link_dropdown:hover {
+  color: unset;
+}
+
+.header__link_dropdown:hover {
+  text-decoration: none;
+}
+
 .header__text_font {
   font-size: 14px;
   font-family: "Montserrat", Arial, sans-serif;

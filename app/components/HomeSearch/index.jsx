@@ -64,7 +64,7 @@ class HomeSearch extends Component {
                             placeholder="Введите запрос..."/>
 
                             <button type="submit" className="home-search__button">
-                                <Link to='/products'>
+                                <Link to='/items'>
                                 <i className="fas fa-search home-search__icon"/>
                                 </Link>
                             </button>

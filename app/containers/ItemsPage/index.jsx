@@ -26,9 +26,7 @@ import pages from '../../mockups/pages.json';
 
 const HeaderDiv = styled.div`
     height: 120px;
-    @media screen and (max-width: 700px) {
-        height: 66px;
-    }
+
 `;
 
 export class ItemsPage extends React.Component {
@@ -50,7 +48,7 @@ export class ItemsPage extends React.Component {
             content =
                 <div>
                     <HeaderDiv/>
-                    <ItemsList items_info={data}/>
+                    <ItemsList update={this.props.init} items_info={data} flag_search={true}/>
                 </div>
         }
         else {

@@ -122,7 +122,11 @@ class Header extends React.Component {
                                 <DropdownMenu>
                                     <DropdownItem disabled>{user.username}</DropdownItem>
                                     <DropdownItem disabled><span>Баллов: </span>{user.points}</DropdownItem>
-                                    <DropdownItem>Мои вещи</DropdownItem>
+                                    <DropdownItem>
+                                        <Link className="header__link_dropdown" to='/user_items'>
+                                            Мои вещи
+                                        </Link>
+                                    </DropdownItem>
                                     <DropdownItem>Профиль</DropdownItem>
                                     <DropdownItem onClick={() => {
                                       const options = {

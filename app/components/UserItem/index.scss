@@ -1,0 +1,111 @@
+@import "../../global-styles/global-params";
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+}
+
+.user-item__flex {
+  display: flex;
+}
+
+.user-item__img {
+  width: 150px;
+  height: 150px;
+}
+
+.user-item__info {
+  margin-left: 20px;
+}
+
+.user-item__title {
+  font-family: $font-family_common;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.user-item__description {
+  font-family: $font-family_common;
+  font-size: 17px;
+}
+
+.user-item__status {
+  margin-top: 10px;
+}
+
+.user-item__text {
+  font-family: $font-family_common;
+  font-size: 15px;
+}
+
+.user-item__change {
+  max-width: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
+  text-align: center;
+}
+
+.user-item__button_wrap {
+  height: 50px;
+  margin-top: 10px;
+  border: 2px solid;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  border-radius: 500px;
+  cursor: pointer;
+}
+.user-item__button_wrap_edit {
+  border-color: #c5c500;
+}
+.user-item__button_wrap_edit:hover {
+  background-color: #c5c500;
+}
+.user-item__button_wrap_delete {
+  border-color: #ff4d4d;
+}
+.user-item__button_wrap_delete:hover {
+  background-color: #ff4d4d;
+}
+.user-item__button_wrap_add {
+  max-width: 300px;
+  border-color: #4c8c4c;
+}
+.user-item__button_wrap_add:hover {
+  background-color: #4c8c4c;
+}
+
+.user-item__button {
+  padding: 0 40px;
+  line-height: 40px;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: $font-family_common;
+  @media screen and (max-width: 700px) {
+    padding: 0 25px;
+    line-height: 35px;
+    font-size: 12px;
+  }
+  @media screen and (max-width: 350px) {
+    padding: 0 10px;
+  }
+}
+
+.user-item__a {
+  font-family: $font-family_common;
+  font-size: 13px;
+  color: black;
+}
+.user-item__a:hover {
+  color: $corporate-color;
+  text-decoration: none;
+}
+
+.user-item__date {
+  font-family: $font-family_common;
+  font-size: 13px;
+  margin-top: 10px;
+}

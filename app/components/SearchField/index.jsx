@@ -64,7 +64,7 @@ class SearchField extends Component {
                             placeholder="Введите запрос..."/>
 
                             <button type="submit" className="search-field__button">
-                                <Link to='/products'>
+                                <Link to='/items'>
                                 <i className="fas fa-search search-field__icon"/>
                                 </Link>
                             </button>
