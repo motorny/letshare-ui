@@ -1,0 +1,233 @@
+.profile-page__img {
+  background: url("/background.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.profile-page__modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.profile-page__modal_text_wrap {
+  z-index: 1000;
+  background-color: #ffffff;
+  padding: 30px;
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -35vh;
+  overflow-y: hidden;
+  overflow-scrolling: touch;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+  border-radius: 40px;
+}
+@media screen and (max-width: 813px) {
+  .profile-page__modal_text_wrap {
+    padding: 10px;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: unset;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    margin: 0;
+  }
+}
+
+.profile-page__modal_text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Calibri, sans-serif;
+  color: #2a729c;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media screen and (max-width: 813px) {
+  .profile-page__modal_text {
+    font-size: 14px;
+  }
+}
+
+.profile-page__text_wrap {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 40%;
+}
+@media screen and (max-width: 600px) {
+  .profile-page__text_wrap {
+    width: 65%;
+  }
+}
+
+.profile-page__text_title {
+  font-family: "Montserrat", Proxima Nova, sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  transition: 0.5s ease;
+}
+@media screen and (max-width: 1000px) {
+  .profile-page__text_title {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .profile-page__text_title {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .profile-page__text_title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-page__text_strings {
+    display: block;
+  }
+}
+
+.profile-page__text_common {
+  margin-top: 15px;
+  line-height: 25px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 23px;
+  transition: 0.5s ease;
+}
+@media screen and (max-width: 1000px) {
+  .profile-page__text_common {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .profile-page__text_common {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .profile-page__text_common {
+    font-size: 12px;
+  }
+}
+
+.profile-page__button_wrap {
+  display: inline-block;
+  margin-top: 30px;
+  text-align: center;
+  background-color: #2a729c;
+  border-radius: 500px;
+  cursor: pointer;
+}
+
+.profile-page__button_wrap:hover .profile-page__button {
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .profile-page__button_wrap:hover .profile-page__button {
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+}
+
+.profile-page__container {
+  background-color: white;
+  border-radius: 40px;
+}
+
+.profile-page__row {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-page__col {
+  padding: 40px;
+}
+@media screen and (max-width: 767px) {
+  .profile-page__col {
+    padding: 30px 15px;
+  }
+}
+
+.profile-page__col_title {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.profile-page__col_title_text {
+  font-family: "Montserrat", Proxima Nova, sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+}
+@media screen and (max-width: 1025px) {
+  .profile-page__col_title_text {
+    font-size: 19px;
+  }
+}
+
+.profile-page__input {
+  margin-bottom: 15px;
+  height: 50px;
+}
+
+.profile-page__input {
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 13px;
+}
+
+.profile-page__input:focus {
+  outline: none;
+  border: 1px solid #2a729c;
+}
+
+.profile-page__button {
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 0;
+  background-color: #2a729c;
+  border-radius: 500px;
+  text-align: center;
+}
+
+.profile-page__button:focus {
+  outline: none;
+}
+
+.profile-page__button:hover {
+  background-color: #2B84AF;
+}
+
+.profile-page__button_text {
+  color: #ffffff;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.profile-page__error {
+  text-align: center;
+}
+
+/*# sourceMappingURL=index.css.map */
