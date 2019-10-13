@@ -23,7 +23,7 @@ export const urls = {
     authorization_url: `${server}oauth2/authorize`,
     signup_url: `${server}oauth2/register`,
     access_token_url: `${server}oauth2/token`,
-    token_info_url: `${server}oauth2/token?access_token=${getSession()}`,
+    token_info_url: token => `${server}oauth2/token?access_token=${token}`,
     revoke_token_url: `${server}oauth2/revoke`,
     oauth2RedirectUrl: '/auth',
   },
