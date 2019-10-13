@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import {Container, Row} from "reactstrap";
+import {Container} from "reactstrap";
 
 import { getLocale } from "../../cookieManager";
 import Item from "../Item";
@@ -97,6 +97,20 @@ export class ItemsList extends React.Component {
         }) .then(res => {this.props.update();}).catch(err => ({ err }));
     }
 
+    makeRequest(id) {
+        const body = {
+            "id": id,
+        };
+        requestAuth("http://185.91.53.50:5000/req/add/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: JSON.stringify(body),
+        }) .then(res => {this.props.update();}).catch(err => ({ err }));
+    }
+
     render() {
         console.log(this.state.itemInfo);
         const locale = getLocale();
@@ -151,7 +165,7 @@ export class ItemsList extends React.Component {
                         <hr/>
                         {this.props.flag_search
                             ?
-                            <Item id={el.item.id} name={el.item.name} img_url={el.item.img_url} descriptiion={el.item.description}
+                            <Item makeRequest={this.makeRequest} id={el.item.id} name={el.item.name} img_url={el.item.img_url} descriptiion={el.item.description}
                                   owner={el.user.name} location={el.user.location} creation_time={el.item.creation_time}
                                   status={el.item.status}/>
                             :

@@ -50,7 +50,7 @@ const Item = (props) => {
                 </div>
             </div>
             <div className="item__contact">
-                <Button status={props.status === 0 ? '0' : '1'} className="item__button_wrap">
+                <Button onClick={evt => props.makeRequest(props.id)} status={props.status === 0 ? '0' : '1'} className="item__button_wrap">
                   <span className="item__button">
                     Взять
                   </span>
@@ -60,13 +60,15 @@ const Item = (props) => {
     );
 };
 Item.propTypes = {
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     img_url: PropTypes.string.isRequired,
     descriptiion: PropTypes.string.isRequired,
     owner: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     creation_time: PropTypes.number.isRequired,
-    status: PropTypes.number.isRequired
+    status: PropTypes.number.isRequired,
+    makeRequest: PropTypes.func.isRequired
 };
 
 export default Item;
