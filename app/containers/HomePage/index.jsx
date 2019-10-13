@@ -6,7 +6,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import {Container} from "reactstrap";
-
+import { withRequest } from '../../utils/auth';
 import HomeSearch from "../../components/HomeSearch";
 
 import { getLocale } from '../../cookieManager';
@@ -35,4 +35,4 @@ export class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+export default withRequest(HomePage);
