@@ -79,7 +79,7 @@ function getTokenRequest(tokenUrl, options, onAuth, onError) {
     .then(resp => {
       setSession(resp.access_token);
       setLogined(true);
-      setUser(resp.username);
+      setUser(resp.username, resp.points, resp.photo_url);
       onAuth(resp);
     })
     .catch(err => {

@@ -32,12 +32,15 @@ export function getLocale() {
   return appLocales.includes(locale) ? locale : DEFAULT_LOCALE;
 }
 
-export function setUser(user) {
+export function setUser(username, points, photo_url) {
+  const user = JSON.stringify({ username, points, photo_url });
   cookies.set('cur_user', user, { path: '/' });
 }
 
 export function getUser() {
-  return cookies.get('cur_user');
+  const user = cookies.get('cur_user');
+  if (user instanceof Object) return user;
+  return { username: 'user', points: 0, photo_url: 'http://museeach.ru/photo.png' };
 }
 
 export function rmUser() {
