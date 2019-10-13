@@ -116,7 +116,7 @@ export class RegisterPage extends React.Component {
           <Container className="register-page__container">
             <Row className="register-page__row">
               <Col xs="12" md="12" className="register-page__col">
-                <div className="register-page__col_title animated fadeInDownBig">
+                <div className="register-page__col_title animated">
                   <span className="register-page__col_title_text">
                     {content.col_title[locale]}
                   </span>

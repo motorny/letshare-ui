@@ -1,7 +1,7 @@
 /*
  * ProfileForm
  *
- * This is the form fot profile
+ * This is the form for profile
  */
 
 import React from 'react';
