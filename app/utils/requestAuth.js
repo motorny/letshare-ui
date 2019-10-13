@@ -11,17 +11,17 @@ import { getSession } from '../cookieManager';
  */
 export default function requestAuth(url, options) {
   let optionsAuth;
-  if (options)
-    optionsAuth = Object.assign(options, {
-      headers: {
-        authorization: `Bearer ${getSession()}`,
-      },
-    });
+  if (options) {
+    if (!options.headers)
+      options.headers = {};
+    options.headers.authorization = `Bearer ${getSession()}`;
+  }
   else
-    optionsAuth = {
+    options = {
       headers: {
         authorization: `Bearer ${getSession()}`,
       },
     };
-  return request(url, optionsAuth);
+  console.log(options);
+  return request(url, options);
 }
