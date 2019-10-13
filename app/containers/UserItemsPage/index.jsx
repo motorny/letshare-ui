@@ -31,9 +31,7 @@ const HeaderDiv = styled.div`
 
 export class UserItemsPage extends React.Component {
     componentDidMount() {
-        if (!this.props.data && !this.props.error) {
-            this.props.init();
-        }
+        this.props.init();
     }
 
     render() {

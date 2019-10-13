@@ -13,7 +13,6 @@ import requestAuth from '../../utils/requestAuth';
  */
 export function* loadContent() {
   const user = yield select(makeSelectUserData());
-  console.log(user);
   const body = {
     user_id: user.id,
   };

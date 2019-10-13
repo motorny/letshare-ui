@@ -1,35 +1,28 @@
-import { put, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest, call } from 'redux-saga/effects';
 import { LOAD_MAIN } from './constants';
 import { mainLoaded, mainLoadingError } from './actions';
 
-import { requestDataUrl } from '../../utils/constants';
-import requests_info from '../../mockups/requests.json';
+import { urls } from '../../utils/constants';
 import requestAuth from '../../utils/requestAuth';
-
-function fetchUrl(url) {
-  // url is only the last part of the full path
-  return requestAuth(url, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-  })
-    .then(res => ({ res }))
-    .catch(err => ({ err }));
-}
 
 /**
  * Feed data load handler
  */
 export function* loadContent() {
-  const { res, err } = yield fetchUrl('http://185.91.53.50:5000/req/');
-  console.log(res, err);
-  if (err) {
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  };
+  try {
+    const res = yield call(requestAuth, urls.req.get, options);
+    if (res) yield put(mainLoaded(res));
+    else yield put(mainLoaded(false));
+  } catch (err) {
     yield put(mainLoadingError(err));
-  } else if (res) yield put(mainLoaded(res));
-  else yield put(mainLoaded(false));
-  // yield put(mainLoaded(requests_info));
+  }
 }
 
 /**

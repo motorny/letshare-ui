@@ -11,7 +11,7 @@ import TechProblem from '../../components/TechProblem';
 import RequestsList from "../../components/RequestsList";
 
 import { getLocale } from '../../cookieManager';
-import { loadContent } from './actions';
+import { loadContent, mainLoadingError } from './actions';
 import {
   makeSelectData,
   makeSelectError,
@@ -24,16 +24,35 @@ import saga from './saga';
 
 import pages from '../../mockups/pages.json';
 import { withAuth } from '../../utils/auth';
+import requestAuth from '../../utils/requestAuth';
+import { urls } from '../../utils/constants';
 
 const HeaderDiv = styled.div`
     height: 120px;
 `;
 
 export class RequestsPage extends React.Component {
+    constructor(props) {
+      super(props);
+      this.onClick = this.onClick.bind(this);
+    }
+
     componentDidMount() {
-        if (!this.props.data && !this.props.error) {
-            this.props.init();
-        }
+        this.props.init();
+    }
+
+    onClick(id, response) {
+      const options = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({status: response}),
+      };
+      requestAuth(urls.req.put(id), options)
+        .then(resp => {this.props.init();})
+        .catch(err => {this.props.onError(err);})
     }
 
     render() {
@@ -42,14 +61,13 @@ export class RequestsPage extends React.Component {
 
         let content;
         if (error) {
-            console.log(error);
             content = <TechProblem/>
         }
         else if (data) {
             content =
                 <div>
                     <HeaderDiv/>
-                    <RequestsList requests_info={data}/>
+                    <RequestsList requests_info={data} onClick={this.onClick}/>
                 </div>
         }
         else {
@@ -73,11 +91,13 @@ RequestsPage.propTypes = {
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   init: PropTypes.func,
+  onError: PropTypes.func,
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
     init: () => dispatch(loadContent()),
+    onError: err => dispatch(mainLoadingError(err)),
   };
 }
 

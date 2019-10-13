@@ -30,6 +30,7 @@ const Choise = styled.div`
 const Request = (props) => {
 
     const locale = getLocale();
+    console.log(props);
     return (
         <div className="request">
             <div className="request__flex">
@@ -71,12 +72,16 @@ const Request = (props) => {
                 </Status>
                 :
                 <div className="request__choise_wrap">
-                    <Choise className="request__button_wrap" response={'1'}>
+                    <Choise className="request__button_wrap"
+                            response={'1'}
+                            onClick={evt => props.onClick(props.id, 1)}>
                         <span className="request__button">
                             Принять
                         </span>
                     </Choise>
-                    <Choise className="request__button_wrap" response={'-1'}>
+                    <Choise className="request__button_wrap"
+                            response={'-1'}
+                            onClick={evt => props.onClick(props.id, -1)}>
                         <span className="request__button">
                             Отклонить
                         </span>

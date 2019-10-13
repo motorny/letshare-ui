@@ -11,6 +11,7 @@ import './index.css';
 import requestAuth from "../../utils/requestAuth";
 import {RemoveScroll} from "react-remove-scroll";
 import {BASE64_RE} from "../../utils/utils";
+import { urls } from '../../utils/constants';
 
 export class ItemsList extends React.Component {
     constructor(props) {
@@ -99,9 +100,9 @@ export class ItemsList extends React.Component {
 
     makeRequest(id) {
         const body = {
-            "id": id,
+            "item_id": id,
         };
-        requestAuth("http://185.91.53.50:5000/req/add/", {
+        requestAuth(urls.req.add, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

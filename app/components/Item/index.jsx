@@ -7,13 +7,13 @@ import { getLocale } from "../../cookieManager";
 import './index.css';
 
 const COLOR_MAP = {
-    '1': '#2a729c',
-    '0': '#607480'
+    '0': '#2a729c',
+    '1': '#607480'
 };
 
 const CURSOR_MAP = {
-    '1': 'pointer',
-    '0': 'default'
+    '0': 'pointer',
+    '1': 'default'
 };
 
 const Button = styled.div`

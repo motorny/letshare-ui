@@ -67,7 +67,8 @@ class RequestsList extends React.Component {
                         <hr/>
                         <Request name={el.item.name} img_url={el.item.img_url} descriptiion={el.item.description}
                                  requester={el.user.name} location={el.user.location} response={el.response}
-                                 creation_time={el.creation_time} isInput={this.state.isInput}/>
+                                 creation_time={el.creation_time} isInput={this.state.isInput} id={el.id}
+                                 onClick={this.props.onClick}/>
                     </div>
                 ))}
                 <hr/>

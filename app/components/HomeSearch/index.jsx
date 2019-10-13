@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 
 import './index.css';
 import { HashLink as Link } from 'react-router-hash-link';
+import { withRouter } from 'react-router-dom';
 
 class HomeSearch extends Component {
     constructor(props) {
         super(props);
+
+      this.onSubmit = this.onSubmit.bind(this);
 
         this.filterArray = this.filterArray.bind(this);
         this.state = {
@@ -52,10 +55,16 @@ class HomeSearch extends Component {
         this.getData();
     }
 
-    render() {
+  onSubmit(event) {
+    event.preventDefault();
+    this.props.history.push(`/items?search=${event.target.search.value}`);
+  }
+
+
+  render() {
         return (
             <div className="home-search">
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <div className="home-search__input_wrap">
                         <input
                             className="home-search__input"
@@ -64,9 +73,7 @@ class HomeSearch extends Component {
                             placeholder="Введите запрос..."/>
 
                             <button type="submit" className="home-search__button">
-                                <Link to='/items'>
                                 <i className="fas fa-search home-search__icon"/>
-                                </Link>
                             </button>
 
                     </div>
@@ -84,4 +91,4 @@ class HomeSearch extends Component {
     }
 }
 
-export default HomeSearch;
+export default withRouter(HomeSearch);

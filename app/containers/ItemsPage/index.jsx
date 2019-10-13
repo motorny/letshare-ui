@@ -36,16 +36,12 @@ export class ItemsPage extends React.Component {
     componentDidMount() {
       let search = this.props.location.search.substring(1);
       search = parseQueryString(search).search;
-      console.log(this.props.search, search);
-        if ((!this.props.data || this.props.search !== search) && !this.props.error) {
-            this.props.init(search);
-        }
+      this.props.init(search);
     }
 
     componentDidUpdate() {
       let search = this.props.location.search.substring(1);
       search = parseQueryString(search).search;
-      console.log(this.props.search, search);
       if (this.props.search !== search) {
         this.props.init(search);
       }
@@ -56,7 +52,6 @@ export class ItemsPage extends React.Component {
         const locale = getLocale();
         let content;
         if (error) {
-            console.log(error);
             content = <TechProblem/>
         }
         else if (data) {

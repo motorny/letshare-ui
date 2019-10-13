@@ -33,6 +33,11 @@ export const urls = {
   },
   items: {
     get: `${server}item/`,
+  },
+  req: {
+    add: `${server}req/add`,
+    get: `${server}req/`,
+    put: id => `${server}req/${id}`,
   }
 };
 
