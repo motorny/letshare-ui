@@ -27,6 +27,10 @@ export const urls = {
     revoke_token_url: `${server}oauth2/revoke`,
     oauth2RedirectUrl: '/auth',
   },
+  profile: {
+    get: uid => `${server}profile/${uid}`,
+    update: uid => `${server}profile/${uid}`,
+  },
 };
 
 export const auth_config = {
