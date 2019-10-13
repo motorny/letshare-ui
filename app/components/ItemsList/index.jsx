@@ -45,13 +45,13 @@ export class ItemsList extends React.Component {
     addItem(evt) {
         evt.preventDefault();
         const formToSubmit = document.getElementById("item-form");
-        console.log(formToSubmit);
+
         const body = {
             "image": formToSubmit.image.value.replace(BASE64_RE, ''),
             "name": formToSubmit.name.value,
             "description": formToSubmit.description.value
         };
-        console.log(body);
+
         requestAuth("http://185.91.53.50:5000/item/add", {
             method: 'POST',
             headers: {
@@ -79,12 +79,13 @@ export class ItemsList extends React.Component {
                 Accept: 'application/json',
             },
             body: JSON.stringify(body),
-        }) .then(res => {this.props.update(); this.toggle(false)}).catch(err => ({ err }));
+        }) .then(res => {this.props.update(); this.toggle(false);}).catch(err => ({ err }));
     }
 
     deleteItem(itemInfo) {
+        
         const body = {
-            "id": this.state.itemInfo.id
+            "id": itemInfo.id
         };
         requestAuth("http://185.91.53.50:5000/item/delete", {
             method: 'POST',
