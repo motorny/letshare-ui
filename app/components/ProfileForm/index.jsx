@@ -60,12 +60,14 @@ export class ProfileForm extends React.Component {
     if (data !== undefined)
       this.state = {
         ...data,
+        password: '',
         correct: 0,
       };
     else
       this.state = {
         photo: '',
         username: '',
+        password: '',
         name: '',
         location: '',
         contact: '',
@@ -95,6 +97,7 @@ export class ProfileForm extends React.Component {
       this.state.correct = -1;
     else
       this.state.correct = 1;
+    this.state.password = password;
     this.setState(this.state);
   }
 
@@ -111,6 +114,7 @@ export class ProfileForm extends React.Component {
   render() {
     const locale = getLocale();
     const { required } = this.props;
+    const { password } = this.state;
     return (
       <div>
         <form onSubmit={this.props.onSubmit} id="profile-form">
