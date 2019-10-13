@@ -35,7 +35,7 @@ const content = {
 export class ItemForm extends React.Component {
   constructor(props) {
     super(props);
-    this.onChangePhoto = this.onChangePhoto.bind(this);
+    this.onChangeImage = this.onChangeImage.bind(this);
     this.onChangeText = this.onChangeText.bind(this);
 
     const { data } = props;
@@ -45,15 +45,15 @@ export class ItemForm extends React.Component {
       };
     else
       this.state = {
-        photo: '',
+        image: '',
         name: '',
         description: '',
       };
   }
 
-  onChangePhoto(photo) {
-    if (BASE64_RE.test(photo)) {
-      this.state.photo = photo;
+  onChangeImage(image) {
+    if (BASE64_RE.test(image)) {
+      this.state.image = image;
       this.setState(this.state);
     }
   }
@@ -69,11 +69,11 @@ export class ItemForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.props.onSubmit} id="item-form">
-          <ImageFormField src={this.state.photo} onChange={this.onChangePhoto}/>
+          <ImageFormField src={this.state.image} onChange={this.onChangeImage}/>
           <input className="item-form__input hidden"
-                 name="photo"
+                 name="image"
                  required={required}
-                 value={this.state.photo} readOnly />
+                 value={this.state.image} readOnly />
           <input className="item-form__input"
                  name="name"
                  type="text"
