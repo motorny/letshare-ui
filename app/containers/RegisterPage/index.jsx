@@ -13,17 +13,23 @@ import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import { userDataGettingError, userDataGot } from '../App/actions';
+import { userDataGettingError } from '../App/actions';
 import { makeSelectError } from '../App/selectors';
 
+import ProfileForm from '../../components/ProfileForm';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import { getLocale } from '../../cookieManager';
-import authorize from '../../utils/oauth2-authorize';
+import { BASE64_RE } from '../../utils/utils';
+import { urls } from '../../utils/constants';
+import request from '../../utils/request';
+
 
 import pages from '../../mockups/pages.json';
 import content from '../../mockups/signup.json';
 
 import './index.css'
+
+const fields = ["username", "password", "photo", "name", "location", "contact"];
 
 const Modal = ({locale}) => (
   <RemoveScroll>
@@ -33,7 +39,7 @@ const Modal = ({locale}) => (
     />
     <div className="register-page__modal_text_wrap">
       <div className="register-page__modal_text">
-        {content.authorization[locale]}
+        {content.registration[locale]}
       </div>
       <LoadingIndicator style={{margin: '0 auto'}}/>
     </div>
@@ -44,37 +50,61 @@ export class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
     this.onSignup = this.onSignup.bind(this);
-    this.onFailureLogin = this.onFailureLogin.bind(this);
-    this.onSuccessLogin = this.onSuccessLogin.bind(this);
+    this.onFailureSignup = this.onFailureSignup.bind(this);
+    this.onSuccessSignup = this.onSuccessSignup.bind(this);
 
-    this.state = { logining: false, redirect: false };
+    this.state = { registrating: false, redirect: false };
   }
 
-  onSuccessLogin(user) {
-    this.props.onAuth(user);
-    this.setState({ logining: false, redirect: true });
+  componentWillMount() {
+    this.props.onError(false);
   }
 
-  onFailureLogin(error) {
+  onSuccessSignup() {
+    this.setState({ registrating: false, redirect: true });
+  }
+
+  onFailureSignup(error) {
     this.props.onError(error);
-    this.setState({ logining: false, redirect: false });
+    this.setState({ registrating: false, redirect: false });
   }
 
   onSignup(event) {
     event.preventDefault();
-    let form = document.getElementById("signup-form");
-    const login = form.login.value;
-    const password = form.password.value;
-    this.setState({ logining: true, redirect: false });
-    authorize(login, password, this.onSuccessLogin, this.onFailureLogin);
+    let form = document.getElementById("profile-form");
+    const data = {};
+    fields.forEach(e => data[e] = form[e].value);
+    if (data.password !== form.repeated_password.value)
+      return;
+    data.photo = data.photo.replace(BASE64_RE, '');
+    console.log(data);
+    this.setState({ registrating: true, redirect: false });
+    const options = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+    request(urls.auth.signup_url, options)
+      .then(resp => {
+        this.onSuccessSignup();
+      })
+      .catch(err => {
+        if (err.response)
+          err.response.json().then(resp => this.onFailureSignup(resp.error));
+        else
+          this.onFailureSignup(err.message);
+      });
   }
 
   render() {
     const locale = getLocale();
-    const { logining, redirect } = this.state;
+    const { registrating, redirect } = this.state;
     const { error } = this.props;
     if (redirect)
-      return <Redirect to="/" />;
+      return <Redirect to="/login" />;
     return (
       <div>
         <Helmet>
@@ -91,23 +121,9 @@ export class RegisterPage extends React.Component {
                     {content.col_title[locale]}
                   </span>
                 </div>
-                <form onSubmit={this.onSignup} id="signup-form" className="animated fadeInUpBig">
-                  <input className="register-page__input"
-                         name="login"
-                         type="text"
-                         required
-                         placeholder={content.input_login[locale]}/>
-                  <input className="register-page__input"
-                         name="password"
-                         type="password"
-                         required
-                         placeholder={content.input_password[locale]}/>
-                  <input className="register-page__button login-page__button_text"
-                         type="submit"
-                         value={content.button_login[locale]}/>
-                </form>
+                <ProfileForm required={true} onSubmit={this.onSignup} />
                 {error && (
-                  <div className="register-page__col_title">
+                  <div className="register-page__error">
                     <span className="register-page__col_title_text">
                       {error}
                     </span>
@@ -117,7 +133,7 @@ export class RegisterPage extends React.Component {
             </Row>
           </Container>
         </div>
-        {logining && <Modal locale={locale} />}
+        {registrating && <Modal locale={locale} />}
       </div>
     );
   }
@@ -125,7 +141,6 @@ export class RegisterPage extends React.Component {
 
 RegisterPage.propTypes = {
   error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  onAuth: PropTypes.func,
   onError: PropTypes.func,
 };
 
@@ -135,7 +150,6 @@ const mapStateToProps = createStructuredSelector({
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onAuth: data => dispatch(userDataGot(data)),
     onError: error => dispatch(userDataGettingError(error)),
   };
 }

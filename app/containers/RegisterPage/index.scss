@@ -7,7 +7,7 @@ $mobile-width: 813px;
   height: 100vh;
 }
 
-.login-page__modal {
+.register-page__modal {
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
@@ -17,7 +17,7 @@ $mobile-width: 813px;
   z-index: 999;
 }
 
-.login-page__modal_text_wrap {
+.register-page__modal_text_wrap {
   z-index: 1000;
   background-color: #ffffff;
   padding: 30px;
@@ -49,7 +49,7 @@ $mobile-width: 813px;
   border-radius: 40px;
 }
 
-.login-page__modal_text {
+.register-page__modal_text {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: Calibri, sans-serif;
@@ -63,7 +63,7 @@ $mobile-width: 813px;
 
 .register-page__text_wrap {
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -121,7 +121,7 @@ $mobile-width: 813px;
   cursor: pointer;
 }
 
-.register-page__button_wrap:hover .login-page__button {
+.register-page__button_wrap:hover .register-page__button {
   @media screen and (min-width: 768px) {
     letter-spacing: 0.1em;
     font-weight: 500;
@@ -203,4 +203,8 @@ $mobile-width: 813px;
   font-family: $font-family_common;
   font-size: 15px;
   font-weight: bold;
+}
+
+.register-page__error {
+  text-align: center;
 }

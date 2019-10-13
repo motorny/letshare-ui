@@ -4,7 +4,7 @@
   height: 100vh;
 }
 
-.login-page__modal {
+.register-page__modal {
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
@@ -14,7 +14,7 @@
   z-index: 999;
 }
 
-.login-page__modal_text_wrap {
+.register-page__modal_text_wrap {
   z-index: 1000;
   background-color: #ffffff;
   padding: 30px;
@@ -35,7 +35,7 @@
   border-radius: 40px;
 }
 @media screen and (max-width: 813px) {
-  .login-page__modal_text_wrap {
+  .register-page__modal_text_wrap {
     padding: 10px;
     left: 0;
     right: 0;
@@ -48,7 +48,7 @@
   }
 }
 
-.login-page__modal_text {
+.register-page__modal_text {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: Calibri, sans-serif;
@@ -57,14 +57,14 @@
   font-size: 20px;
 }
 @media screen and (max-width: 813px) {
-  .login-page__modal_text {
+  .register-page__modal_text {
     font-size: 14px;
   }
 }
 
 .register-page__text_wrap {
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -136,11 +136,11 @@
   cursor: pointer;
 }
 
-.register-page__button_wrap:hover .login-page__button {
+.register-page__button_wrap:hover .register-page__button {
   transition: 0.3s ease-in-out;
 }
 @media screen and (min-width: 768px) {
-  .register-page__button_wrap:hover .login-page__button {
+  .register-page__button_wrap:hover .register-page__button {
     letter-spacing: 0.1em;
     font-weight: 500;
   }
@@ -225,3 +225,9 @@
   font-size: 15px;
   font-weight: bold;
 }
+
+.register-page__error {
+  text-align: center;
+}
+
+/*# sourceMappingURL=index.css.map */
