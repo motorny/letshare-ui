@@ -10,7 +10,6 @@ import { getSession } from '../cookieManager';
  * @return {object}           The response data
  */
 export default function requestAuth(url, options) {
-  let optionsAuth;
   if (options) {
     if (!options.headers)
       options.headers = {};
@@ -22,6 +21,5 @@ export default function requestAuth(url, options) {
         authorization: `Bearer ${getSession()}`,
       },
     };
-  console.log(options);
   return request(url, options);
 }
