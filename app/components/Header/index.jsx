@@ -26,6 +26,10 @@ const ArrowToTop = styled.div`
     opacity: ${props => (props.isScrolled ? "1" : "0")}
 `;
 
+const HeaderWrap = styled.div`
+    background-color: ${props => (props.isScrolled ? "white" : "transparent")};
+`;
+
 class Header extends React.Component {
     constructor(props) {
         super(props);

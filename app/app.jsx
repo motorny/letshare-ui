@@ -29,6 +29,7 @@ import 'file-loader?name=[name].[ext]!./.htaccess'; // eslint-disable-line impor
 import '!file-loader?name=[name].[ext]!../public/favicon.ico';
 import '!file-loader?name=[name].[ext]!./images/logo.png';
 import '!file-loader?name=[name].[ext]!./images/photo.png';
+import '!file-loader?name=[name].[ext]!./images/background.jpg';
 
 // Load the fonts
 import '!file-loader?name=[name].[ext]!./fonts/Montserrat-Regular.ttf';

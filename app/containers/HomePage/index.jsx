@@ -7,7 +7,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import {Container} from "reactstrap";
 
-import SearchField from "../../components/SearchField";
+import HomeSearch from "../../components/HomeSearch";
 
 import { getLocale } from '../../cookieManager';
 
@@ -21,13 +21,16 @@ export class HomePage extends React.Component {
         const locale = getLocale();
 
         return (
-            <Container className="home-page">
+            <div className="home-page">
+
+            <Container className="home-page__container">
                 <Helmet>
                     <title>{pages.home_page[locale]}</title>
                     <meta name="description" content="ITS mainpage"/>
                 </Helmet>
-                <SearchField/>
+                <HomeSearch/>
             </Container>
+            </div>
         );
     }
 }

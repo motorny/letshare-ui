@@ -24,7 +24,7 @@
 }
 
 .header__navbar {
-  padding: 30px;
+  padding: 20px;
   transition: padding 0.3s linear;
 }
 @media screen and (min-width: 1199px) {
